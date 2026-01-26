@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Research — Samarth Paliwal</title>
+  <meta name="description" content="Research on FPGA-accelerated ML for low-RCS orbital debris tracking." />
+  <meta name="theme-color" content="#070A12" />
+  <link rel="stylesheet" href="./assets/site.css" />
+</head>
+
+<body>
+<main class="wrap">
+
+<header class="topbar">
+  <div class="brand">
+    <div class="mark"></div>
+    <div class="brandText">
+      <strong>Samarth Paliwal</strong>
+      <span>SWE · AI Systems · Research</span>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a class="chip" href="index.html">🏠 Home</a>
+    <a class="chip" href="projects.html">🚀 Projects</a>
+    <a class="chip" href="blog.html">📝 Blog</a>
+    <a class="chip" href="research.html">🧠 Research</a>
+    <a class="chip" href="https://github.com/samarthpaliwal" target="_blank">💻 GitHub</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="heroInner">
+    <div class="kickers">
+      <span class="kicker">IEEE-style research</span>
+      <span class="kicker">ML + Signal Processing</span>
+      <span class="kicker">FPGA Systems</span>
+    </div>
+
+    <h1 class="heroTitle">
+      Research
+    </h1>
+
+    <p class="heroSub">
+      My work focuses on applying machine learning under strict real-time,
+      hardware, and physical constraints — especially in radar and sensing systems.
+    </p>
+  </div>
+</section>
+
+<!-- RESEARCH PAPER -->
+<section class="belowHero">
+  <div class="panel">
+
+    <h2 class="sectionTitle">
+      Numerical-Aided Machine Learning for Low-RCS Orbital Debris Tracking
+    </h2>
+
+    <p class="aboutP">
+      This research investigates how <b>machine learning, signal processing,
+      and FPGA acceleration</b> can be combined to reliably detect and track
+      <b>low radar-cross-section (Low-RCS) orbital debris</b> in Low Earth Orbit (LEO).
+    </p>
+
+    <p class="aboutP">
+      The work addresses a real operational problem: traditional radar pipelines
+      struggle with weak returns, latency constraints, and scalability when tracking
+      small debris objects. We propose a system that integrates
+      <b>catalog-aware gating, FPGA-resident neural inference, and multistatic fusion</b>
+      to improve detection reliability while staying within tight resource budgets.
+    </p>
+
+    <h3 class="sectionTitle">Key contributions</h3>
+    <ul class="bullets">
+      <li>Ephemeris-constrained gating using TLE/SATNOGS priors to reduce search space.</li>
+      <li>Quantized 1D-CNN inference deployed directly on FPGA for real-time throughput.</li>
+      <li>Multistatic radar fusion to increase aspect diversity and resolution.</li>
+      <li>Latency-aware system design with explicit DSP, BRAM, and timing constraints.</li>
+      <li>MPC-supervised closed-loop control for adaptive gating and thresholds.</li>
+    </ul>
+
+    <h3 class="sectionTitle">System architecture</h3>
+    <p class="aboutP">
+      Candidate debris trajectories are propagated using SGP4/SDP4 models to
+      generate time-tagged predictions. These predictions define a
+      <b>time–range–Doppler–angle gating window</b> that constrains downstream processing.
+    </p>
+
+    <p class="aboutP">
+      Within this window, raw I/Q radar data is converted into compact
+      slow-time / fast-time tensors. A quantized neural network executes
+      fully on FPGA, producing detection logits while meeting real-time
+      latency constraints. A single-board computer (SBC) handles scheduling,
+      model loading, and telemetry.
+    </p>
+
+    <h3 class="sectionTitle">Evaluation and validation</h3>
+    <ul class="bullets">
+      <li>Probability of detection measured at fixed false-alarm rates.</li>
+      <li>Latency breakdown across acquisition, gating, inference, and fusion.</li>
+      <li>Ablation studies isolating gating, fusion, and quantization effects.</li>
+      <li>Theoretical analysis of gating volume vs. miss probability.</li>
+    </ul>
+
+    <h3 class="sectionTitle">Why this matters</h3>
+    <p class="aboutP">
+      This work demonstrates how ML systems can be designed as
+      <b>engineering artifacts</b>, not black boxes — respecting physics,
+      hardware limits, and operational reliability. The ideas extend beyond
+      radar to any real-time ML system operating under uncertainty.
+    </p>
+
+    <div class="ctaRow">
+      <a class="btn primary" href="./assets/IEEE_ICSSA__numerical_aided_machine_learning_on_Low_RCS_Orbital_Debris_tracking_with_mobile_radar_system.pdf" target="_blank">
+        📄 Read Full Paper (PDF)
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="siteFooter">
+  <div class="copyright">
+    © <span id="y"></span> Samarth Paliwal
+  </div>
+  <div class="footerTags">
+    <span class="footerTag">Research</span>
+    <span class="footerTag">FPGA</span>
+    <span class="footerTag">Radar</span>
+    <span class="footerTag">Machine Learning</span>
+  </div>
+</footer>
+
+</main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Evaluation-first RAG — Samarth Paliwal</title>
+  <meta name="theme-color" content="#070A12" />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <main class="wrap">
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark"></div>
+        <div class="brandText">
+          <strong>Samarth Paliwal</strong>
+          <span>Research</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="chip" href="../index.html">🏠 Home</a>
+        <a class="chip" href="../research.html">🧠 Research</a>
+        <a class="chip" href="../blog.html">📝 Blog</a>
+        <a class="chip" href="../projects.html">🚀 Projects</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="heroInner">
+        <div class="kickers">
+          <span class="kicker">RAG</span>
+          <span class="kicker">Evaluation</span>
+          <span class="kicker">Debugging</span>
+        </div>
+        <h1 class="heroTitle">Evaluation-first RAG</h1>
+        <p class="heroSub">
+          A simple loop: define tasks → measure retrieval → measure answer quality → iterate.
+          This keeps improvements real instead of “prompt vibes”.
+        </p>
+      </div>
+    </section>
+
+    <section class="belowHero">
+      <div class="panel">
+        <h2 class="sectionTitle">Core idea</h2>
+        <p class="aboutP">
+          Most RAG failures start before generation. If retrieval brings the wrong context, the best prompt
+          will still fail. So the first step is to separate the pipeline into stages and measure each one.
+        </p>
+
+        <h2 class="sectionTitle">A practical evaluation loop</h2>
+        <ul class="bullets">
+          <li><b>Task set:</b> create 30–100 questions that match real user asks.</li>
+          <li><b>Retrieval checks:</b> for each question, confirm if the needed chunk is retrieved.</li>
+          <li><b>Answer checks:</b> grade correctness + citation quality + refusal behavior.</li>
+          <li><b>Iterate:</b> fix chunking/metadata/re-ranking before prompt tuning.</li>
+        </ul>
+
+        <h2 class="sectionTitle">What to measure</h2>
+        <ul class="bullets">
+          <li>Recall@K for “did we fetch the right chunk?”</li>
+          <li>Answer accuracy on a small rubric (correct/partial/wrong)</li>
+          <li>Latency breakdown (retrieval vs generation)</li>
+          <li>Failure buckets (missing context, wrong context, prompt confusion)</li>
+        </ul>
+
+        <h2 class="sectionTitle">Why this matters</h2>
+        <p class="aboutP">
+          This approach makes debugging fast. You can tell if a change improved retrieval,
+          improved the answer, or just changed style. It also prevents “prompt-only” tuning
+          that hides real issues.
+        </p>
+      </div>
+    </section>
+
+    <footer class="siteFooter">
+      <div class="copyright">© <span id="y"></span> Samarth Paliwal</div>
+    </footer>
+
+  </main>
+
+  <script>
+    (function(){
+      const y = document.getElementById("y");
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

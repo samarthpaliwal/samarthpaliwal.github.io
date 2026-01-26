@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — Samarth Paliwal</title>
+  <meta name="description" content="Samarth Paliwal — Blog" />
+  <meta name="theme-color" content="#070A12" />
+  <link rel="stylesheet" href="./assets/site.css" />
+</head>
+
+<body>
+  <main class="wrap">
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark"></div>
+        <div class="brandText">
+          <strong>Samarth Paliwal</strong>
+          <span>SWE · AI Systems · Product</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a class="chip" href="index.html">🏠 Home</a>
+        <a class="chip" href="projects.html">🚀 Projects</a>
+        <a class="chip" href="blog.html">📝 Blog</a>
+        <a class="chip" href="research.html">🧠 Research</a>
+        <a class="chip" href="https://github.com/samarthpaliwal" target="_blank" rel="noreferrer">💻 GitHub</a>
+        <a class="chip" href="https://www.linkedin.com/in/samarthpali/" target="_blank" rel="noreferrer">💼 LinkedIn</a>
+        <a class="chip" href="mailto:samarthpaliwal@gmail.com">✉️ Email</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="heroInner">
+        <div class="kickers">
+          <span class="kicker">Short notes</span>
+          <span class="kicker">Engineering decisions</span>
+          <span class="kicker">AI systems</span>
+        </div>
+
+        <h1 class="heroTitle">Blog</h1>
+        <p class="heroSub">
+          Practical notes on building reliable software: UI state, API boundaries, and AI systems that fail safely.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="research.html">🧠 Research Hub</a>
+          <a class="btn ghost" href="./resume.pdf" download>📄 Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="belowHero">
+      <div class="belowGrid">
+
+        <div class="panel">
+          <h2 class="sectionTitle">Posts</h2>
+
+          <div class="postList">
+            <a class="postCard" href="./blog/rag-breaks-first.html">
+              <div class="postTop">
+                <div class="postTitle">RAG in practice: what breaks first</div>
+                <div class="postMeta">AI Systems · Retrieval · Evaluation</div>
+              </div>
+              <div class="postDesc">
+                Where RAG systems fail in real apps, and how to debug with small tests and clear metrics.
+              </div>
+            </a>
+
+            <a class="postCard" href="./blog/clean-apis.html">
+              <div class="postTop">
+                <div class="postTitle">Clean APIs: validation at the boundary</div>
+                <div class="postMeta">SWE · Reliability · Design</div>
+              </div>
+              <div class="postDesc">
+                How to design APIs that reject bad inputs early, return consistent errors, and stay easy to extend.
+              </div>
+            </a>
+
+            <a class="postCard" href="./blog/ui-data-flow.html">
+              <div class="postTop">
+                <div class="postTitle">UI data flow: loading, empty, error, success</div>
+                <div class="postMeta">Frontend · State · UX</div>
+              </div>
+              <div class="postDesc">
+                A simple state model that keeps UIs readable and avoids weird edge cases.
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 class="sectionTitle">Topics</h2>
+          <div class="chipGrid">
+            <span class="skillChip">RAG</span>
+            <span class="skillChip">Embeddings</span>
+            <span class="skillChip">Evaluation</span>
+            <span class="skillChip">API Design</span>
+            <span class="skillChip">UI State</span>
+            <span class="skillChip">Reliability</span>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <h2 class="sectionTitle">Want research-first?</h2>
+          <p class="aboutP">
+            If you want a more “paper-style” view of the work, use the Research Hub.
+          </p>
+          <div class="ctaRow">
+            <a class="btn primary" href="research.html">Open Research</a>
+            <a class="btn ghost" href="projects.html">View Projects</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <footer class="siteFooter">
+      <div class="copyright">© <span id="y"></span> Samarth Paliwal</div>
+      <div class="footerTags">
+        <span class="footerTag">Blog</span>
+        <span class="footerTag">SWE</span>
+        <span class="footerTag">AI Systems</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    (function(){
+      const y = document.getElementById("y");
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

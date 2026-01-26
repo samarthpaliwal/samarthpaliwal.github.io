@@ -22,11 +22,14 @@
       </div>
 
       <nav class="nav">
-        <a class="chip" href="projects.html">🚀 Projects</a>
-        <a class="chip" href="https://github.com/samarthpaliwal" target="_blank" rel="noreferrer">💻 GitHub</a>
-        <a class="chip" href="https://www.linkedin.com/in/samarthpali/" target="_blank" rel="noreferrer">💼 LinkedIn</a>
-        <a class="chip" href="mailto:samarthpaliwal@gmail.com">✉️ Email</a>
-      </nav>
+  <a class="chip" href="projects.html">🚀 Projects</a>
+  <a class="chip" href="blog.html">📝 Blog</a>
+  <a class="chip" href="research.html">🧠 Research</a>
+  <a class="chip" href="https://github.com/samarthpaliwal" target="_blank" rel="noreferrer">💻 GitHub</a>
+  <a class="chip" href="https://www.linkedin.com/in/samarthpali/" target="_blank" rel="noreferrer">💼 LinkedIn</a>
+  <a class="chip" href="mailto:Unisamarthpaliwal@gmail.com">✉️ Email</a>
+</nav>
+
     </header>
 
     <section class="hero hero--bio">
@@ -52,7 +55,10 @@
 
             <div class="ctaRow">
               <a class="btn primary" href="projects.html">🚀 View Projects</a>
+              <a class="btn ghost" href="blog.html">📝 Read Blog</a>
               <a class="btn ghost" href="./resume.pdf" download>📄 Download Resume</a>
+              <a class="chip" href="research.html">🧠 Research</a>
+
             </div>
 
             <div class="miniStats">
@@ -94,13 +100,118 @@
       </div>
     </section>
 
-    <footer class="footer">
-      <div>© <span id="y"></span> Samarth Paliwal</div>
+    <!-- About + Skills -->
+    <section class="belowHero">
+      <div class="belowGrid">
+
+        <div class="panel aboutPanel">
+          <h2 class="sectionTitle">About</h2>
+
+          <p class="aboutP">
+            I’m Samarth Paliwal, a Computer Science undergraduate who builds software that stays stable in real use.
+            I work across UI, APIs, data flow, and deployment. I care about clean boundaries, reliable behavior,
+            and readable code.
+          </p>
+
+          <p class="aboutP">
+            I’m most interested in AI systems when they are treated like engineering work: retrieval, prompting,
+            evaluation, and product logic each have clear responsibilities. I like building tools that make model
+            failures easier to inspect and improve.
+          </p>
+
+          <p class="aboutP">
+            I enjoy fast feedback loops. I prototype, measure what breaks, tighten the system, and ship again.
+            I’m aiming for AI internships or SWE roles where reliability matters.
+          </p>
+
+          <div class="aboutTags">
+            <span class="pill">Evaluation-first</span>
+            <span class="pill">Clean APIs</span>
+            <span class="pill">Product-minded</span>
+            <span class="pill">Systems thinking</span>
+          </div>
+        </div>
+
+        <div class="panel skillsPanel">
+          <h2 class="sectionTitle">Skills</h2>
+
+          <div class="skillsBlock">
+            <div class="skillsLabel">Languages</div>
+            <div class="chipGrid">
+              <span class="skillChip">Python</span>
+              <span class="skillChip">JavaScript</span>
+              <span class="skillChip">TypeScript</span>
+            </div>
+          </div>
+
+          <div class="skillsBlock">
+            <div class="skillsLabel">Frontend</div>
+            <div class="chipGrid">
+              <span class="skillChip">React</span>
+              <span class="skillChip">Component design</span>
+              <span class="skillChip">State handling</span>
+              <span class="skillChip">Modern CSS</span>
+            </div>
+          </div>
+
+          <div class="skillsBlock">
+            <div class="skillsLabel">Backend</div>
+            <div class="chipGrid">
+              <span class="skillChip">Node.js</span>
+              <span class="skillChip">Express</span>
+              <span class="skillChip">REST APIs</span>
+              <span class="skillChip">MongoDB</span>
+            </div>
+          </div>
+
+          <div class="skillsBlock">
+            <div class="skillsLabel">AI Systems</div>
+            <div class="chipGrid">
+              <span class="skillChip">RAG</span>
+              <span class="skillChip">Embeddings</span>
+              <span class="skillChip">Prompting</span>
+              <span class="skillChip">Evaluation</span>
+            </div>
+          </div>
+
+          <div class="skillsBlock">
+            <div class="skillsLabel">Tools</div>
+            <div class="chipGrid">
+              <span class="skillChip">Git/GitHub</span>
+              <span class="skillChip">Vercel</span>
+              <span class="skillChip">AWS basics</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="siteFooter">
+      <div class="copyright">
+        © <span id="y"></span> Samarth Paliwal
+      </div>
+
+      <div class="footerTags">
+        <span class="footerTag">SWE</span>
+        <span class="footerTag">AI Systems</span>
+        <span class="footerTag">Product</span>
+        <span class="footerTag">RAG</span>
+        <span class="footerTag">Evaluation</span>
+      </div>
     </footer>
 
   </main>
 
+  <!-- Scripts -->
   <script src="./assets/site.js"></script>
-  <script>setYear();</script>
+  <script>
+    // Works even if you don’t have setYear() defined
+    (function(){
+      const y = document.getElementById("y");
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reliability for LLM Apps — Samarth Paliwal</title>
+  <meta name="theme-color" content="#070A12" />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <main class="wrap">
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="mark"></div>
+        <div class="brandText">
+          <strong>Samarth Paliwal</strong>
+          <span>Research</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="chip" href="../index.html">🏠 Home</a>
+        <a class="chip" href="../research.html">🧠 Research</a>
+        <a class="chip" href="../blog.html">📝 Blog</a>
+        <a class="chip" href="../projects.html">🚀 Projects</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="heroInner">
+        <div class="kickers">
+          <span class="kicker">Reliability</span>
+          <span class="kicker">Guardrails</span>
+          <span class="kicker">UX</span>
+        </div>
+        <h1 class="heroTitle">Reliability for LLM Apps</h1>
+        <p class="heroSub">
+          Make model behavior predictable with boundaries, fallbacks, and visible failure states.
+        </p>
+      </div>
+    </section>
+
+    <section class="belowHero">
+      <div class="panel">
+        <h2 class="sectionTitle">Principles</h2>
+        <ul class="bullets">
+          <li><b>Boundaries:</b> keep product logic outside the prompt.</li>
+          <li><b>Validation:</b> validate inputs and tool outputs.</li>
+          <li><b>Fallbacks:</b> have a safe response when confidence is low.</li>
+          <li><b>Observability:</b> log retrieval results, latency, and refusal reasons.</li>
+        </ul>
+
+        <h2 class="sectionTitle">UX patterns that help</h2>
+        <ul class="bullets">
+          <li>Show citations and sources.</li>
+          <li>Show “I might be wrong” states when needed.</li>
+          <li>Make the system ask clarifying questions when data is missing.</li>
+          <li>Offer a manual override path.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="siteFooter">
+      <div class="copyright">© <span id="y"></span> Samarth Paliwal</div>
+    </footer>
+
+  </main>
+
+  <script>
+    (function(){
+      const y = document.getElementById("y");
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
