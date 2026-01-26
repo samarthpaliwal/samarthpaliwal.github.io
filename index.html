@@ -5,76 +5,102 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Samarth Paliwal</title>
   <meta name="description" content="Samarth Paliwal — Software Engineering · AI Systems · Product Builder" />
-  <meta name="theme-color" content="#0b0f17" />
+  <meta name="theme-color" content="#070A12" />
   <link rel="stylesheet" href="./assets/site.css" />
 </head>
 
 <body>
   <main class="wrap">
-    <div class="topbar">
+
+    <header class="topbar">
       <div class="brand">
         <div class="mark"></div>
         <div class="brandText">
           <strong>Samarth Paliwal</strong>
-          <span>Software Engineering · AI Systems · Product</span>
+          <span>SWE · AI Systems · Product</span>
         </div>
       </div>
 
-      <div class="nav">
-        <a class="chip" href="#projects">🚀 Projects</a>
-        <a class="chip" href="#blog">✍️ Blog</a>
+      <nav class="nav">
+        <a class="chip" href="projects.html">🚀 Projects</a>
         <a class="chip" href="https://github.com/samarthpaliwal" target="_blank" rel="noreferrer">💻 GitHub</a>
         <a class="chip" href="https://www.linkedin.com/in/samarthpali/" target="_blank" rel="noreferrer">💼 LinkedIn</a>
-        <button class="iconBtn" onclick="toggleTheme()">🌓 Theme</button>
-      </div>
-    </div>
+        <a class="chip" href="mailto:samarthpaliwal@gmail.com">✉️ Email</a>
+      </nav>
+    </header>
 
-    <section class="card">
-      <h1>Building reliable software with AI in the loop.</h1>
-      <p>
-        I build full-stack products and ML-driven tools. I care about clean architecture,
-        reliable APIs, and interfaces that match the data flow.
-      </p>
+    <section class="hero hero--bio">
+      <div class="heroInner">
+        <div class="bioGrid">
 
-      <div class="btnRow">
-        <a class="btn primary" href="mailto:samarthpaliwal@gmail.com">✉️ Email</a>
-        <a class="btn" href="./resume.pdf" download>📄 Download Resume</a>
-      </div>
-    </section>
+          <div class="bioText">
+            <div class="kickers">
+              <span class="kicker">Research-first engineering</span>
+              <span class="kicker">Full-stack + AI</span>
+              <span class="kicker">Shipping-focused</span>
+            </div>
 
-    <section class="section" id="projects">
-      <div class="card">
-        <h1 style="font-size:18px;margin:0 0 10px">🚀 Projects</h1>
-        <p style="margin-bottom:14px">Each project has its own page.</p>
+            <h1 class="heroTitle">
+              I build reliable software <span class="accent">with AI in the loop</span>.
+            </h1>
 
-        <div class="btnRow">
-          <a class="btn" href="./projects/creditcardfraud.html">💳 CreditCardFraud</a>
-          <a class="btn" href="./projects/stock-tracker.html">📈 Stock_Tracker</a>
-          <a class="btn" href="./projects/ignition.html">🔥 Ignition</a>
-          <a class="btn" href="./projects/nova-ai.html">🤖 nova-ai</a>
+            <p class="heroSub">
+              I’m a Computer Science undergraduate focused on software engineering and AI systems.
+              I build end-to-end: UI, APIs, data flow, and deployment. I care about correctness,
+              evaluation, and clean interfaces.
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn primary" href="projects.html">🚀 View Projects</a>
+              <a class="btn ghost" href="./resume.pdf" download>📄 Download Resume</a>
+            </div>
+
+            <div class="miniStats">
+              <div class="miniStat">
+                <div class="miniNum">4</div>
+                <div class="miniLabel">Projects</div>
+              </div>
+              <div class="miniStat">
+                <div class="miniNum">AI</div>
+                <div class="miniLabel">RAG · Eval · Tools</div>
+              </div>
+              <div class="miniStat">
+                <div class="miniNum">SWE</div>
+                <div class="miniLabel">APIs · UI · Systems</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bioImageCard">
+            <div class="avatarWrap">
+              <img class="avatar" src="./assets/profile.jpg" alt="Samarth Paliwal" />
+            </div>
+
+            <div class="bioCardText">
+              <div class="bioName">Samarth Paliwal</div>
+              <div class="bioRole">Software Engineering · AI Systems</div>
+              <div class="bioNote">
+                Interested in RAG systems, evaluation, and building product-grade tools.
+              </div>
+
+              <div class="bioLinks">
+                <a class="btn" href="mailto:samarthpaliwal@gmail.com">Email</a>
+                <a class="btn ghost" href="https://github.com/samarthpaliwal" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="blog">
-      <div class="card">
-        <h1 style="font-size:18px;margin:0 0 10px">✍️ Blog</h1>
-        <p style="margin-bottom:14px">Each post has its own page.</p>
-
-        <div class="btnRow">
-          <a class="btn" href="./blog/rag-breaks-first.html">RAG in practice: what breaks first</a>
-          <a class="btn" href="./blog/clean-apis.html">Building APIs that stay clean</a>
-          <a class="btn" href="./blog/ui-data-flow.html">UI that doesn’t fight the data</a>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="y"></span> Samarth Paliwal · GitHub Pages
+    <footer class="footer">
+      <div>© <span id="y"></span> Samarth Paliwal</div>
     </footer>
+
   </main>
 
   <script src="./assets/site.js"></script>
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script>setYear();</script>
 </body>
 </html>

@@ -4,65 +4,86 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Stock_Tracker · Samarth Paliwal</title>
-  <meta name="theme-color" content="#0b0f17" />
+  <meta name="theme-color" content="#070A12" />
   <link rel="stylesheet" href="../assets/site.css" />
 </head>
 
 <body>
   <main class="wrap">
-    <div class="topbar">
+    <header class="topbar">
       <div class="brand">
         <div class="mark"></div>
         <div class="brandText">
-          <strong>Samarth Paliwal</strong>
-          <span>Project</span>
+          <strong>Stock_Tracker</strong>
+          <span>SWE · APIs · UI</span>
         </div>
       </div>
 
-      <div class="nav">
-        <a class="chip" href="../index.html">← Home</a>
-        <a class="chip" href="../index.html#projects">Projects</a>
-        <a class="chip" href="https://github.com/samarthpaliwal/Stock_Tracker" target="_blank" rel="noreferrer">🔗 Repo</a>
-        <button class="iconBtn" onclick="toggleTheme()">🌓 Theme</button>
-      </div>
-    </div>
+      <nav class="nav">
+        <a class="chip" href="../projects.html">← Projects</a>
+        <a class="chip" href="../index.html">Home</a>
+        <a class="chip" href="https://github.com/samarthpaliwal/Stock_Tracker" target="_blank" rel="noreferrer">Repo</a>
+      </nav>
+    </header>
 
-    <section class="card">
-      <h1>📈 Stock Tracker</h1>
-      <p>
-        Stock tracking tool that pulls market data through APIs and presents it in a clean, readable way.
-      </p>
-
-      <div class="img">
+    <section class="projectHero">
+      <h1 class="pageTitle">📈 Stock Tracker</h1>
+      <p class="pageSub">A stock tracking app that turns API data into a usable interface.</p>
+      <div class="thumb big">
         <img src="../assets/stock_tracker.png" alt="Stock_Tracker screenshot" />
-      </div>
-
-      <div class="section">
-        <h2>What it does</h2>
-        <ul class="list">
-          <li>Fetches stock data from an API</li>
-          <li>Displays price changes and basic stats</li>
-          <li>Supports tracking multiple tickers</li>
-          <li>Handles errors and missing data safely</li>
-        </ul>
-
-        <h2>Engineering focus</h2>
-        <ul class="list">
-          <li>Clean separation of data fetching and UI</li>
-          <li>Robust handling of API failures</li>
-          <li>Readable components and consistent formatting</li>
-        </ul>
-
-        <h2>Next improvements</h2>
-        <ul class="list">
-          <li>Caching and rate-limit handling</li>
-          <li>Watchlists + alerts</li>
-          <li>Better charts and time ranges</li>
-        </ul>
       </div>
     </section>
 
-    <footer>© <span id="y"></span> Samarth Paliwal</footer>
+    <section class="essay cardWide">
+      <h2>How the code works (overview)</h2>
+      <p>
+        This project is built around a simple loop: accept a ticker symbol, fetch market data from
+        an API, normalize the response, then render it in the UI. The “engineering” part is making
+        that loop stable: handling bad inputs, network failures, rate limits, and inconsistent API
+        payloads.
+      </p>
+      <p>
+        Most implementations start with a UI component or a CLI entry point. The user provides a
+        ticker, and the code validates it (non-empty, valid characters). Once validated, the app
+        calls a data service function such as <span class="code">fetchQuote(ticker)</span>. This
+        function builds a URL with query parameters, attaches the API key (often from environment
+        variables), and sends an HTTP request.
+      </p>
+      <p>
+        After receiving the response, the code parses JSON and converts it into a stable internal
+        format. This step matters because APIs differ: some return numbers as strings, some use
+        nested objects, and some omit fields. A good tracker uses safe access with defaults and
+        converts values into numbers for comparisons and formatting.
+      </p>
+      <p>
+        Once the data is normalized, the UI layer renders a “quote card” with price, daily change,
+        and any extra fields like volume or open/high/low. If this is a React app, state management
+        typically includes <span class="code">loading</span>, <span class="code">error</span>,
+        and <span class="code">data</span>. The UI shows a skeleton/loader during requests, an
+        error banner on failures, and the full card on success.
+      </p>
+      <p>
+        If the project supports multiple tickers, it keeps an array of tracked symbols. Adding a
+        symbol pushes into that list, and the app either fetches sequentially or in parallel using
+        <span class="code">Promise.all</span>. A clean version separates “data fetching” from
+        “presentation” so UI components don’t contain request logic.
+      </p>
+      <p>
+        The code usually includes failure handling: if the API is down or returns a non-200 response,
+        it sets an error state and renders a user-friendly message instead of crashing. Some versions
+        also debounce input, so typing doesn’t trigger repeated API calls.
+      </p>
+      <p>
+        The end result is a small but realistic product slice: it treats external APIs as unreliable,
+        keeps a stable internal data model, and builds UI states that reflect real-world conditions
+        (loading, empty, error, success). That approach is what makes a tracker feel “finished” rather
+        than like a demo.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="y"></span> Samarth Paliwal</div>
+    </footer>
   </main>
 
   <script src="../assets/site.js"></script>
