@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CreditCardFraud · Samarth Paliwal</title>
+  <meta name="theme-color" content="#0b0f17" />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark"></div>
+        <div class="brandText">
+          <strong>Samarth Paliwal</strong>
+          <span>Project</span>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a class="chip" href="../index.html">← Home</a>
+        <a class="chip" href="../index.html#projects">Projects</a>
+        <a class="chip" href="../index.html#blog">Blog</a>
+        <button class="iconBtn" onclick="toggleTheme()">🌓 Theme</button>
+      </div>
+    </div>
+
+    <section class="card">
+      <h1>💳 Credit Card Fraud Detection</h1>
+      <p>
+        A fraud detection pipeline designed for imbalanced data. Focus on evaluation,
+        useful metrics, and reliability in real settings.
+      </p>
+
+      <div class="btnRow">
+        <a class="btn primary" href="https://github.com/samarthpaliwal/CreditCardFraud" target="_blank" rel="noreferrer">🔗 Repo</a>
+      </div>
+
+      <div class="img">
+        <img src="../assets/creditcardfraud.png" alt="CreditCardFraud screenshot" />
+      </div>
+
+      <div class="section" style="margin-top:14px">
+        <div class="card">
+          <h1 style="font-size:18px;margin:0 0 10px">What I learned</h1>
+          <p>
+            Handling imbalance, selecting metrics that matter, and comparing baselines vs tuned models.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Samarth Paliwal
+    </footer>
+  </main>
+
+  <script src="../assets/site.js"></script>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RAG in practice · Samarth Paliwal</title>
+  <meta name="theme-color" content="#0b0f17" />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="mark"></div>
+        <div class="brandText">
+          <strong>Samarth Paliwal</strong>
+          <span>Blog</span>
+        </div>
+      </div>
+
+      <div class="nav">
+        <a class="chip" href="../index.html">← Home</a>
+        <a class="chip" href="../index.html#blog">Blog</a>
+        <button class="iconBtn" onclick="toggleTheme()">🌓 Theme</button>
+      </div>
+    </div>
+
+    <section class="card">
+      <h1>RAG in practice: what breaks first</h1>
+      <p style="margin-bottom:14px">Jan 2026 · AI Systems</p>
+
+      <div class="card">
+        <p>
+          Write your blog content here. Keep paragraphs short. Add headings with <code>&lt;h2&gt;</code>.
+        </p>
+        <h2 style="margin:14px 0 8px">1) Retrieval quality</h2>
+        <p>
+          Explain what fails when retrieval returns near-miss documents.
+        </p>
+        <h2 style="margin:14px 0 8px">2) Evaluation</h2>
+        <p>
+          Explain what you measure and why it matters.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Samarth Paliwal
+    </footer>
+  </main>
+
+  <script src="../assets/site.js"></script>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
