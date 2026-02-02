@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Research — Samarth Paliwal</title>
-  <meta name="description" content="Research on FPGA-accelerated ML for low-RCS orbital debris tracking." />
+  <meta name="description" content="Research on numerical-aided ML for Low-RCS orbital debris tracking with mobile radar systems." />
   <meta name="theme-color" content="#070A12" />
   <link rel="stylesheet" href="./assets/site.css" />
 </head>
@@ -12,131 +12,185 @@
 <body>
 <main class="wrap">
 
-<header class="topbar">
-  <div class="brand">
-    <div class="mark"></div>
-    <div class="brandText">
-      <strong>Samarth Paliwal</strong>
-      <span>SWE · AI Systems · Research</span>
-    </div>
-  </div>
-
-  <nav class="nav">
-    <a class="chip" href="index.html">🏠 Home</a>
-    <a class="chip" href="projects.html">🚀 Projects</a>
-    <a class="chip" href="blog.html">📝 Blog</a>
-    <a class="chip" href="research.html">🧠 Research</a>
-    <a class="chip" href="https://github.com/samarthpaliwal" target="_blank">💻 GitHub</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="heroInner">
-    <div class="kickers">
-      <span class="kicker">IEEE-style research</span>
-      <span class="kicker">ML + Signal Processing</span>
-      <span class="kicker">FPGA Systems</span>
+  <!-- Topbar (FIXED LINKS) -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark"></div>
+      <div class="brandText">
+        <strong>Samarth Paliwal</strong>
+        <span>SWE · AI Systems · Research</span>
+      </div>
     </div>
 
-    <h1 class="heroTitle">
-      Research
-    </h1>
+    <nav class="nav">
+  <a class="chip" href="./">🏠 Home</a>
+  <a class="chip" href="./projects/">🚀 Projects</a>
+  <a class="chip" href="./blog/">📝 Blog</a>
+<a class="chip" href="./research/">🧠 Research</a>
+  <a class="chip" href="https://github.com/samarthpaliwal" target="_blank" rel="noreferrer">💻 GitHub</a>
+  <a class="chip" href="https://www.linkedin.com/in/samarthpali/" target="_blank" rel="noreferrer">💼 LinkedIn</a>
+  <a class="chip" href="mailto:samarthpaliwal@gmail.com">✉️ Email</a>
+</nav>
 
-    <p class="heroSub">
-      My work focuses on applying machine learning under strict real-time,
-      hardware, and physical constraints — especially in radar and sensing systems.
-    </p>
-  </div>
-</section>
+  </header>
 
-<!-- RESEARCH PAPER -->
-<section class="belowHero">
-  <div class="panel">
+  <!-- Hero -->
+  <section class="hero hero--bio">
+    <div class="heroInner">
+      <div class="kickers">
+        <span class="kicker">IEEE-style research</span>
+        <span class="kicker">ML + Radar DSP</span>
+        <span class="kicker">FPGA Systems</span>
+      </div>
 
-    <h2 class="sectionTitle">
-      Numerical-Aided Machine Learning for Low-RCS Orbital Debris Tracking
-    </h2>
+      <h1 class="heroTitle">Research</h1>
 
-    <p class="aboutP">
-      This research investigates how <b>machine learning, signal processing,
-      and FPGA acceleration</b> can be combined to reliably detect and track
-      <b>low radar-cross-section (Low-RCS) orbital debris</b> in Low Earth Orbit (LEO).
-    </p>
+      <p class="heroSub">
+        I design ML systems that operate under real constraints: physics, latency, and limited compute.
+        I focus on reliability and evaluation.
+      </p>
 
-    <p class="aboutP">
-      The work addresses a real operational problem: traditional radar pipelines
-      struggle with weak returns, latency constraints, and scalability when tracking
-      small debris objects. We propose a system that integrates
-      <b>catalog-aware gating, FPGA-resident neural inference, and multistatic fusion</b>
-      to improve detection reliability while staying within tight resource budgets.
-    </p>
+      <div class="ctaRow">
+        <a class="btn primary"
+           href="./assets/IEEE_ICSSA__numerical_aided_machine_learning_on_Low_RCS_Orbital_Debris_tracking_with_mobile_radar_system.pdf"
+           target="_blank" rel="noreferrer">
+          📄 Read the paper (PDF)
+        </a>
+        <a class="btn ghost" href="#research-statement">🧾 Research statement</a>
+      </div>
+    </div>
+  </section>
 
-    <h3 class="sectionTitle">Key contributions</h3>
-    <ul class="bullets">
-      <li>Ephemeris-constrained gating using TLE/SATNOGS priors to reduce search space.</li>
-      <li>Quantized 1D-CNN inference deployed directly on FPGA for real-time throughput.</li>
-      <li>Multistatic radar fusion to increase aspect diversity and resolution.</li>
-      <li>Latency-aware system design with explicit DSP, BRAM, and timing constraints.</li>
-      <li>MPC-supervised closed-loop control for adaptive gating and thresholds.</li>
-    </ul>
+  <!-- Paper overview -->
+  <section class="belowHero">
+    <div class="panel">
+      <h2 class="sectionTitle">Numerical-Aided Machine Learning for Low-RCS Orbital Debris Tracking</h2>
 
-    <h3 class="sectionTitle">System architecture</h3>
-    <p class="aboutP">
-      Candidate debris trajectories are propagated using SGP4/SDP4 models to
-      generate time-tagged predictions. These predictions define a
-      <b>time–range–Doppler–angle gating window</b> that constrains downstream processing.
-    </p>
+      <p class="aboutP">
+        This work studies how to detect and track <b>low radar-cross-section (Low-RCS) orbital debris</b> in LEO using a
+        <b>numerical-aided, evaluation-driven ML pipeline</b> that can run under real-time and hardware constraints.
+      </p>
 
-    <p class="aboutP">
-      Within this window, raw I/Q radar data is converted into compact
-      slow-time / fast-time tensors. A quantized neural network executes
-      fully on FPGA, producing detection logits while meeting real-time
-      latency constraints. A single-board computer (SBC) handles scheduling,
-      model loading, and telemetry.
-    </p>
+      <p class="aboutP">
+        The key idea is to treat ML as one component inside a sensing system. We reduce the search space using orbital
+        propagation priors, run a compact detector on constrained hardware, and fuse detections across nodes.
+      </p>
 
-    <h3 class="sectionTitle">Evaluation and validation</h3>
-    <ul class="bullets">
-      <li>Probability of detection measured at fixed false-alarm rates.</li>
-      <li>Latency breakdown across acquisition, gating, inference, and fusion.</li>
-      <li>Ablation studies isolating gating, fusion, and quantization effects.</li>
-      <li>Theoretical analysis of gating volume vs. miss probability.</li>
-    </ul>
+      <h3 class="sectionTitle">Focus</h3>
+      <ul class="bullets">
+        <li><b>Reliability:</b> stable behavior under weak returns, clutter, and varying aspect angles.</li>
+        <li><b>Constraints:</b> predictable latency and memory limits in an embedded / FPGA-friendly design.</li>
+        <li><b>Evaluation:</b> detection under controlled false-alarm rates, plus ablations.</li>
+      </ul>
 
-    <h3 class="sectionTitle">Why this matters</h3>
-    <p class="aboutP">
-      This work demonstrates how ML systems can be designed as
-      <b>engineering artifacts</b>, not black boxes — respecting physics,
-      hardware limits, and operational reliability. The ideas extend beyond
-      radar to any real-time ML system operating under uncertainty.
-    </p>
+      <div class="ctaRow">
+        <a class="btn primary"
+           href="./assets/IEEE_ICSSA__numerical_aided_machine_learning_on_Low_RCS_Orbital_Debris_tracking_with_mobile_radar_system.pdf"
+           target="_blank" rel="noreferrer">
+          📄 Open PDF
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <div class="ctaRow">
-      <a class="btn primary" href="./assets/IEEE_ICSSA__numerical_aided_machine_learning_on_Low_RCS_Orbital_Debris_tracking_with_mobile_radar_system.pdf" target="_blank">
-        📄 Read Full Paper (PDF)
-      </a>
+  <!-- Architecture diagrams (keep your SVG block here unchanged if you already have it) -->
+  <!-- If you already pasted my SVG section, keep it. If not, tell me and I’ll paste it in again. -->
+
+  <!-- Code availability / reproducibility -->
+  <section class="belowHero">
+    <div class="panel">
+      <h2 class="sectionTitle">Code availability / reproducibility</h2>
+
+      <p class="aboutP">
+        This project includes research code, hardware-dependent components, and datasets that may be constrained.
+        To support reproducibility, I structure the system into modules with stable interfaces and config-driven runs.
+      </p>
+
+      <h3 class="sectionTitle">Reproducibility plan</h3>
+      <ul class="bullets">
+        <li><b>Pipeline spec:</b> clear I/O for gating → DSP → inference → fusion.</li>
+        <li><b>Config-driven experiments:</b> thresholds, gating windows, quantization, and fusion modes.</li>
+        <li><b>Evaluation harness:</b> ROC/PR at fixed false-alarm rates + regression checks.</li>
+        <li><b>Ablations:</b> isolate gating-only, ML-only, fusion-only, combined.</li>
+      </ul>
+
+      <h3 class="sectionTitle">What can be shared</h3>
+      <ul class="bullets">
+        <li>Model architecture + quantization settings.</li>
+        <li>Evaluation scripts and plots.</li>
+        <li>Interface contracts and configuration schema.</li>
+      </ul>
+
+      <h3 class="sectionTitle">What may remain limited</h3>
+      <ul class="bullets">
+        <li>Raw radar captures (depends on data rights).</li>
+        <li>Board-specific bitstreams (depends on hardware access).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Research statement -->
+  <section class="belowHero" id="research-statement">
+    <div class="panel">
+      <h2 class="sectionTitle">Research statement (1 page)</h2>
+
+      <p class="aboutP">
+        I build AI systems that behave reliably under real constraints: noisy inputs, limited compute, and time-critical
+        decisions. I care about systems that can be evaluated, debugged, and improved. My interests sit at the
+        intersection of machine learning, signal processing, and embedded systems.
+      </p>
+
+      <p class="aboutP">
+        In numerical-aided ML for Low-RCS debris tracking, the challenge is not only detecting weak targets, but doing
+        so within a feasible search budget. A naive approach searches a large time–range–Doppler–angle space.
+        I use orbital propagation priors to define gated observation windows that reduce compute while preserving
+        detection probability.
+      </p>
+
+      <p class="aboutP">
+        I design the ML detector to fit deployment constraints. The model is compact, aligned to radar time-series,
+        and quantized for FPGA-friendly inference. I evaluate the system using detection metrics at controlled
+        false-alarm rates, latency measurements, and ablation studies that separate the impact of gating, inference,
+        and fusion.
+      </p>
+
+      <p class="aboutP">
+        I want to work on research-adjacent engineering teams that value strong experimental thinking and engineering
+        discipline. I’m motivated by building AI systems that are predictable and controllable through careful
+        formulation, measurable evaluation, and system design.
+      </p>
+
+      <div class="ctaRow">
+        <a class="btn primary" href="mailto:samarthpaliwal@gmail.com">✉️ Contact</a>
+        <a class="btn ghost"
+           href="./assets/IEEE_ICSSA__numerical_aided_machine_learning_on_Low_RCS_Orbital_Debris_tracking_with_mobile_radar_system.pdf"
+           target="_blank" rel="noreferrer">
+          📄 Paper PDF
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="siteFooter">
+    <div class="copyright">
+      © <span id="y"></span> Samarth Paliwal
     </div>
 
-  </div>
-</section>
-
-<footer class="siteFooter">
-  <div class="copyright">
-    © <span id="y"></span> Samarth Paliwal
-  </div>
-  <div class="footerTags">
-    <span class="footerTag">Research</span>
-    <span class="footerTag">FPGA</span>
-    <span class="footerTag">Radar</span>
-    <span class="footerTag">Machine Learning</span>
-  </div>
-</footer>
+    <div class="footerTags">
+      <span class="footerTag">Research</span>
+      <span class="footerTag">Radar</span>
+      <span class="footerTag">FPGA</span>
+      <span class="footerTag">ML Systems</span>
+      <span class="footerTag">Evaluation</span>
+    </div>
+  </footer>
 
 </main>
 
 <script>
-  document.getElementById("y").textContent = new Date().getFullYear();
+  const y = document.getElementById("y");
+  if (y) y.textContent = new Date().getFullYear();
 </script>
 
 </body>

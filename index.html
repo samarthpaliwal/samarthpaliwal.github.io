@@ -1,217 +1,149 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Samarth Paliwal</title>
-  <meta name="description" content="Samarth Paliwal — Software Engineering · AI Systems · Product Builder" />
-  <meta name="theme-color" content="#070A12" />
-  <link rel="stylesheet" href="./assets/site.css" />
+  <meta charset="UTF-8">
+  <title>Samarth Paliwal • Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Samarth Paliwal — projects, experience, and contact.">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <main class="wrap">
+  <header class="site-header">
+    <div class="container nav">
+      <div class="logo">SP</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <header class="topbar">
-      <div class="brand">
-        <div class="mark"></div>
-        <div class="brandText">
-          <strong>Samarth Paliwal</strong>
-          <span>SWE · AI Systems · Product</span>
+  <main>
+    <section id="hero" class="section hero">
+      <div class="container hero-content">
+        <div>
+          <h1>Hi, I'm <span class="accent">Samarth Paliwal</span>.</h1>
+          <p class="subtitle">
+            Brief one‑line pitch about you (e.g., “Software engineer focused on ML, systems, and developer tools.”).
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#projects">View projects</a>
+            <a class="btn ghost" href="Samarth_Paliwal_Resume.pdf" target="_blank" rel="noopener">
+              View résumé
+            </a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <nav class="nav">
-  <a class="chip" href="projects.html">🚀 Projects</a>
-  <a class="chip" href="blog.html">📝 Blog</a>
-  <a class="chip" href="research.html">🧠 Research</a>
-  <a class="chip" href="https://github.com/samarthpaliwal" target="_blank" rel="noreferrer">💻 GitHub</a>
-  <a class="chip" href="https://www.linkedin.com/in/samarthpali/" target="_blank" rel="noreferrer">💼 LinkedIn</a>
-  <a class="chip" href="mailto:Unisamarthpaliwal@gmail.com">✉️ Email</a>
-</nav>
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About</h2>
+        <p>
+          2–3 sentence summary about your background, focus areas, and what you’re currently looking for
+          (e.g., internships, full‑time roles, collaborations).
+        </p>
+      </div>
+    </section>
 
-    </header>
+    <section id="projects" class="section alt">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="cards">
 
-    <section class="hero hero--bio">
-      <div class="heroInner">
-        <div class="bioGrid">
-
-          <div class="bioText">
-            <div class="kickers">
-              <span class="kicker">Research-first engineering</span>
-              <span class="kicker">Full-stack + AI</span>
-              <span class="kicker">Shipping-focused</span>
-            </div>
-
-            <h1 class="heroTitle">
-              I build reliable software <span class="accent">with AI in the loop</span>.
-            </h1>
-
-            <p class="heroSub">
-              I’m a Computer Science undergraduate focused on software engineering and AI systems.
-              I build end-to-end: UI, APIs, data flow, and deployment. I care about correctness,
-              evaluation, and clean interfaces.
+          <article class="card">
+            <h3>Project Name 1</h3>
+            <p class="card-meta">Tech: Python, PyTorch, FastAPI</p>
+            <p>
+              One or two sentences describing what the project does and why it’s interesting or impactful.
             </p>
-
-            <div class="ctaRow">
-              <a class="btn primary" href="projects.html">🚀 View Projects</a>
-              <a class="btn ghost" href="blog.html">📝 Read Blog</a>
-              <a class="btn ghost" href="./resume.pdf" download>📄 Download Resume</a>
-              <a class="chip" href="research.html">🧠 Research</a>
-
+            <div class="card-links">
+              <a href="https://github.com/samarthpaliwal/PROJECT1" target="_blank" rel="noopener">Code</a>
+              <a href="https://PROJECT1-demo-or-site" target="_blank" rel="noopener">Live demo</a>
             </div>
+          </article>
 
-            <div class="miniStats">
-              <div class="miniStat">
-                <div class="miniNum">4</div>
-                <div class="miniLabel">Projects</div>
-              </div>
-              <div class="miniStat">
-                <div class="miniNum">AI</div>
-                <div class="miniLabel">RAG · Eval · Tools</div>
-              </div>
-              <div class="miniStat">
-                <div class="miniNum">SWE</div>
-                <div class="miniLabel">APIs · UI · Systems</div>
-              </div>
+          <article class="card">
+            <h3>Project Name 2</h3>
+            <p class="card-meta">Tech: React, TypeScript, Node</p>
+            <p>
+              Short description showing your role, challenges you solved, or metrics if you have them.
+            </p>
+            <div class="card-links">
+              <a href="https://github.com/samarthpaliwal/PROJECT2" target="_blank" rel="noopener">Code</a>
             </div>
-          </div>
+          </article>
 
-          <div class="bioImageCard">
-            <div class="avatarWrap">
-              <img class="avatar" src="./assets/profile.jpg" alt="Samarth Paliwal" />
+          <article class="card">
+            <h3>Project Name 3</h3>
+            <p class="card-meta">Tech: Whatever fits</p>
+            <p>
+              Another concise description; prioritize projects that match the kind of work you want.
+            </p>
+            <div class="card-links">
+              <a href="https://github.com/samarthpaliwal/PROJECT3" target="_blank" rel="noopener">Code</a>
             </div>
-
-            <div class="bioCardText">
-              <div class="bioName">Samarth Paliwal</div>
-              <div class="bioRole">Software Engineering · AI Systems</div>
-              <div class="bioNote">
-                Interested in RAG systems, evaluation, and building product-grade tools.
-              </div>
-
-              <div class="bioLinks">
-                <a class="btn" href="mailto:samarthpaliwal@gmail.com">Email</a>
-                <a class="btn ghost" href="https://github.com/samarthpaliwal" target="_blank" rel="noreferrer">GitHub</a>
-              </div>
-            </div>
-          </div>
+          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- About + Skills -->
-    <section class="belowHero">
-      <div class="belowGrid">
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
+        <ul class="timeline">
 
-        <div class="panel aboutPanel">
-          <h2 class="sectionTitle">About</h2>
-
-          <p class="aboutP">
-            I’m Samarth Paliwal, a Computer Science undergraduate who builds software that stays stable in real use.
-            I work across UI, APIs, data flow, and deployment. I care about clean boundaries, reliable behavior,
-            and readable code.
-          </p>
-
-          <p class="aboutP">
-            I’m most interested in AI systems when they are treated like engineering work: retrieval, prompting,
-            evaluation, and product logic each have clear responsibilities. I like building tools that make model
-            failures easier to inspect and improve.
-          </p>
-
-          <p class="aboutP">
-            I enjoy fast feedback loops. I prototype, measure what breaks, tighten the system, and ship again.
-            I’m aiming for AI internships or SWE roles where reliability matters.
-          </p>
-
-          <div class="aboutTags">
-            <span class="pill">Evaluation-first</span>
-            <span class="pill">Clean APIs</span>
-            <span class="pill">Product-minded</span>
-            <span class="pill">Systems thinking</span>
-          </div>
-        </div>
-
-        <div class="panel skillsPanel">
-          <h2 class="sectionTitle">Skills</h2>
-
-          <div class="skillsBlock">
-            <div class="skillsLabel">Languages</div>
-            <div class="chipGrid">
-              <span class="skillChip">Python</span>
-              <span class="skillChip">JavaScript</span>
-              <span class="skillChip">TypeScript</span>
+          <li>
+            <div class="timeline-item">
+              <h3>Role @ Company</h3>
+              <span class="timeline-meta">Month Year – Month Year · Location</span>
+              <p>
+                One sentence about your impact (e.g., “Improved X by Y% by doing Z.”).
+              </p>
             </div>
-          </div>
+          </li>
 
-          <div class="skillsBlock">
-            <div class="skillsLabel">Frontend</div>
-            <div class="chipGrid">
-              <span class="skillChip">React</span>
-              <span class="skillChip">Component design</span>
-              <span class="skillChip">State handling</span>
-              <span class="skillChip">Modern CSS</span>
+          <li>
+            <div class="timeline-item">
+              <h3>Degree / Program</h3>
+              <span class="timeline-meta">University · Graduation Year</span>
+              <p>
+                Optional line about focus areas, GPA (if strong), or notable coursework.
+              </p>
             </div>
-          </div>
+          </li>
 
-          <div class="skillsBlock">
-            <div class="skillsLabel">Backend</div>
-            <div class="chipGrid">
-              <span class="skillChip">Node.js</span>
-              <span class="skillChip">Express</span>
-              <span class="skillChip">REST APIs</span>
-              <span class="skillChip">MongoDB</span>
-            </div>
-          </div>
-
-          <div class="skillsBlock">
-            <div class="skillsLabel">AI Systems</div>
-            <div class="chipGrid">
-              <span class="skillChip">RAG</span>
-              <span class="skillChip">Embeddings</span>
-              <span class="skillChip">Prompting</span>
-              <span class="skillChip">Evaluation</span>
-            </div>
-          </div>
-
-          <div class="skillsBlock">
-            <div class="skillsLabel">Tools</div>
-            <div class="chipGrid">
-              <span class="skillChip">Git/GitHub</span>
-              <span class="skillChip">Vercel</span>
-              <span class="skillChip">AWS basics</span>
-            </div>
-          </div>
-        </div>
-
+        </ul>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="siteFooter">
-      <div class="copyright">
-        © <span id="y"></span> Samarth Paliwal
+    <section id="contact" class="section alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          Best way to reach you. For example: “Email me at
+          <a href="mailto:you@example.com">you@example.com</a> or connect on the links below.”
+        </p>
+        <div class="social-links">
+          <a href="mailto:you@example.com">Email</a>
+          <a href="https://github.com/samarthpaliwal" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
-
-      <div class="footerTags">
-        <span class="footerTag">SWE</span>
-        <span class="footerTag">AI Systems</span>
-        <span class="footerTag">Product</span>
-        <span class="footerTag">RAG</span>
-        <span class="footerTag">Evaluation</span>
-      </div>
-    </footer>
-
+    </section>
   </main>
 
-  <!-- Scripts -->
-  <script src="./assets/site.js"></script>
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Samarth Paliwal</small>
+    </div>
+  </footer>
+
   <script>
-    // Works even if you don’t have setYear() defined
-    (function(){
-      const y = document.getElementById("y");
-      if (y) y.textContent = new Date().getFullYear();
-    })();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
