@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stock Tracker • Samarth Paliwal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Stock Tracker — a stock tracking project by Samarth Paliwal."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="logo">SP</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Project</p>
+          <h1>Stock Tracker</h1>
+          <p class="subtitle">
+            A simple stock tracking tool that lets users monitor tickers, prices,
+            and basic trends in one place.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary"
+               href="https://github.com/samarthpaliwal/Stock_Tracker"
+               target="_blank" rel="noopener">
+              View GitHub repo
+            </a>
+            <a class="btn ghost" href="index.html#projects">
+              Back to projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Overview</h2>
+        <p class="body-text">
+          Stock Tracker is built to keep an eye on a set of favorite tickers without
+          getting lost in a full trading platform. It focuses on clarity and a
+          minimal UI instead of complex charts.
+        </p>
+
+        <h2>Tech stack</h2>
+        <p class="body-text">
+          Describe the real stack here (for example: Python, a stock price API, and a simple web UI).
+        </p>
+
+        <h2>Features</h2>
+        <ul class="body-text">
+          <li>Add and remove tickers from a personal watchlist.</li>
+          <li>Show latest prices and daily change.</li>
+          <li>Provide a compact view that works well on desktop and mobile.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Samarth Paliwal</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

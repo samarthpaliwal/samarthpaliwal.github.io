@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nova AI • Samarth Paliwal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Nova AI — an AI assistant project by Samarth Paliwal."
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="logo">SP</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Project</p>
+          <h1>Nova AI</h1>
+          <p class="subtitle">
+            An AI‑powered assistant that helps users draft content, summarize information,
+            and explore ideas through a clean conversational interface.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary"
+            href="https://github.com/samarthpaliwal/nova-ai"
+            target="_blank" rel="noopener">
+            View GitHub repo
+            </a>
+
+            <a class="btn ghost" href="index.html#projects">
+              Back to projects
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Overview</h2>
+        <p class="body-text">
+          Nova AI is a web‑based assistant designed to feel fast and focused. Users can ask questions,
+          generate drafts, and iterate on ideas in a single interface without juggling multiple tools.
+        </p>
+        <p class="body-text">
+          I built Nova AI to practice working with modern AI APIs, manage conversational context,
+          and design a UI that feels professional enough for real‑world use.
+        </p>
+
+        <h2>Tech stack</h2>
+        <p class="body-text">
+          TypeScript, React, Node.js/Express, REST APIs, and a hosted LLM provider (e.g., OpenAI or similar),
+          deployed on a cloud platform.
+        </p>
+
+        <h2>Highlights</h2>
+        <ul class="body-text">
+          <li>Supports multi‑turn conversations with preserved context and regenerated responses.</li>
+          <li>Includes presets for tasks like summarization, idea generation, and email drafting.</li>
+          <li>Implements input validation, loading states, and clear error messages for reliability.</li>
+          <li>Responsive layout that works on mobile, tablet, and desktop.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Samarth Paliwal</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
