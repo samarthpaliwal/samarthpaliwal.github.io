@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Samarth Paliwal • Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfolio of Samarth Paliwal — projects, experience, and contact.">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Portfolio of Samarth Paliwal — projects, experience, and contact."
+  />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
@@ -22,11 +25,12 @@
 
   <main>
     <section id="hero" class="section hero">
-      <div class="container hero-content">
+      <div class="container hero-grid">
         <div>
+          <p class="eyebrow">Software Engineer • Portfolio</p>
           <h1>Hi, I'm <span class="accent">Samarth Paliwal</span>.</h1>
           <p class="subtitle">
-            Brief one‑line pitch about you (e.g., “Software engineer focused on ML, systems, and developer tools.”).
+            One line about you (e.g., Software engineer focused on ML, systems, and developer tools.)
           </p>
           <div class="hero-actions">
             <a class="btn primary" href="#projects">View projects</a>
@@ -41,9 +45,9 @@
     <section id="about" class="section">
       <div class="container">
         <h2>About</h2>
-        <p>
-          2–3 sentence summary about your background, focus areas, and what you’re currently looking for
-          (e.g., internships, full‑time roles, collaborations).
+        <p class="body-text">
+          Replace this with 2–3 sentences about your background, what you work on,
+          and what you’re looking for (internships, full‑time roles, research, etc.).
         </p>
       </div>
     </section>
@@ -52,12 +56,12 @@
       <div class="container">
         <h2>Projects</h2>
         <div class="cards">
-
           <article class="card">
             <h3>Project Name 1</h3>
-            <p class="card-meta">Tech: Python, PyTorch, FastAPI</p>
+            <p class="card-meta">Tech: Python, FastAPI, PostgreSQL</p>
             <p>
-              One or two sentences describing what the project does and why it’s interesting or impactful.
+              Short description: what it does, why it’s interesting, and any
+              impact (users, performance, accuracy, etc.).
             </p>
             <div class="card-links">
               <a href="https://github.com/samarthpaliwal/PROJECT1" target="_blank" rel="noopener">Code</a>
@@ -69,7 +73,7 @@
             <h3>Project Name 2</h3>
             <p class="card-meta">Tech: React, TypeScript, Node</p>
             <p>
-              Short description showing your role, challenges you solved, or metrics if you have them.
+              Short description focused on your role and what you solved.
             </p>
             <div class="card-links">
               <a href="https://github.com/samarthpaliwal/PROJECT2" target="_blank" rel="noopener">Code</a>
@@ -80,13 +84,12 @@
             <h3>Project Name 3</h3>
             <p class="card-meta">Tech: Whatever fits</p>
             <p>
-              Another concise description; prioritize projects that match the kind of work you want.
+              Another concise description for a project that matches the work you want to do.
             </p>
             <div class="card-links">
               <a href="https://github.com/samarthpaliwal/PROJECT3" target="_blank" rel="noopener">Code</a>
             </div>
           </article>
-
         </div>
       </div>
     </section>
@@ -95,27 +98,24 @@
       <div class="container">
         <h2>Experience</h2>
         <ul class="timeline">
-
           <li>
             <div class="timeline-item">
               <h3>Role @ Company</h3>
               <span class="timeline-meta">Month Year – Month Year · Location</span>
               <p>
-                One sentence about your impact (e.g., “Improved X by Y% by doing Z.”).
+                One sentence about impact (e.g., Improved X by Y% by doing Z).
               </p>
             </div>
           </li>
-
           <li>
             <div class="timeline-item">
-              <h3>Degree / Program</h3>
-              <span class="timeline-meta">University · Graduation Year</span>
+              <h3>Degree / Program · University</h3>
+              <span class="timeline-meta">Graduation Year</span>
               <p>
-                Optional line about focus areas, GPA (if strong), or notable coursework.
+                Optional: focus areas, GPA (if strong), or key coursework.
               </p>
             </div>
           </li>
-
         </ul>
       </div>
     </section>
@@ -123,9 +123,9 @@
     <section id="contact" class="section alt">
       <div class="container">
         <h2>Contact</h2>
-        <p>
-          Best way to reach you. For example: “Email me at
-          <a href="mailto:you@example.com">you@example.com</a> or connect on the links below.”
+        <p class="body-text">
+          Best way to reach you. For example: Email me at
+          <a href="mailto:you@example.com">you@example.com</a> or connect below.
         </p>
         <div class="social-links">
           <a href="mailto:you@example.com">Email</a>
@@ -143,7 +143,7 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
