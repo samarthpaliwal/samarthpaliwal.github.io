@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Connect · Samarth Paliwal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<nav class="nav" id="nav"><div class="wrap">
+  <a class="brand" href="index.html">Samarth <span>Paliwal</span></a>
+  <ul>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="connect.html" aria-current="page">Connect</a></li>
+  </ul>
+  <a class="btn" href="#times">Book a time</a>
+</div></nav>
+
+<header class="page-head">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a><span>/</span><span>Connect</span></div>
+    <span class="eyebrow">Meeting times · contact · credentials</span>
+    <h1><span class="l">Let's</span><span class="l">talk</span></h1>
+    <p class="lead">Open to software engineering and data internships, research collaborations and hackathon teams. Pick a slot below, email me with it, and I'll confirm within a day.</p>
+  </div>
+</header>
+
+<section class="section" id="times">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow" data-reveal>Meeting times</span><h2 data-reveal>When I'm free</h2><p data-reveal>Typical weekly availability during the semester, shown in your time zone. Times are set in Arizona time, which never changes for daylight saving.</p></div>
+    <div class="tzbar" data-reveal>
+      <span>Showing times in <b id="tzName">your time zone</b></span>
+      <label for="tz" class="muted">Change:</label>
+      <select id="tz">
+        <option value="local">My time zone</option>
+        <option value="America/Phoenix">Arizona (MST)</option>
+        <option value="America/Los_Angeles">Los Angeles / Irvine</option>
+        <option value="America/Denver">Denver</option>
+        <option value="America/Chicago">Chicago</option>
+        <option value="America/New_York">New York</option>
+        <option value="Europe/London">London</option>
+        <option value="Asia/Kolkata">India</option>
+        <option value="Asia/Singapore">Singapore</option>
+      </select>
+    </div>
+    <div class="avail" id="avail" data-reveal></div>
+    <p class="muted" data-reveal style="margin-top:18px;font-size:14px">Slots are 30 minutes by default. Need something outside these hours? Say so in the email and I'll find a time.</p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow" data-reveal>Contact</span><h2 data-reveal>Reach me</h2></div>
+    <div class="contact-row">
+      <article class="cardx" data-reveal><span class="tag">Email · fastest</span><h4>Write to me</h4><span class="mono" id="email">Paliwalsamarth39@gmail.com</span><div><button class="btn primary" type="button" data-copy="#email" data-magnet>Copy email</button></div></article>
+      <article class="cardx" data-reveal><span class="tag">Code</span><h4>GitHub</h4><span class="mono">github.com/samarthpaliwal</span><div><a class="btn" href="https://github.com/samarthpaliwal" target="_blank" rel="noopener">Open GitHub</a></div></article>
+      <article class="cardx" data-reveal><span class="tag">Profile</span><h4>LinkedIn</h4><span class="mono">linkedin.com/in/samarthpali</span><div><a class="btn" href="https://www.linkedin.com/in/samarthpali/" target="_blank" rel="noopener">Open LinkedIn</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow" data-reveal>Credentials</span><h2 data-reveal>On record</h2><p data-reveal>The facts a recruiter or collaborator usually asks for first.</p></div>
+    <div class="cards">
+      <article class="cardx" data-reveal><span class="tag">Status</span><h4>Authorized to work in the U.S.</h4><p>No sponsorship required. Willing to relocate.</p></article>
+      <article class="cardx" data-reveal><span class="tag">Location</span><h4>Irvine, California</h4><p>Studying in Tucson, Arizona during term. Remote-friendly.</p></article>
+      <article class="cardx" data-reveal><span class="tag">Education</span><h4>B.S. Computer Science (Honors)</h4><p>University of Arizona, W.A. Franke Honors College. Expected May 2029.</p><a class="more" href="education.html">Details</a></article>
+      <article class="cardx gold" data-reveal><span class="tag">Certification</span><h4>IBM Data Science Professional Certificate</h4><p>Ten-course sequence on Coursera, with capstone.</p><a class="more" href="education.html">Modules</a></article>
+      <article class="cardx" data-reveal><span class="tag">Awards</span><h4>3× first place</h4><p>Arizona Hacks (500+ teams) and two Innovation Hacks wins.</p></article>
+      <article class="cardx" data-reveal><span class="tag">Resume</span><h4>Full resume on request</h4><p>Email me and I'll send the current PDF, tailored to the role if you tell me which one.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap narrow">
+    <div class="section-head"><span class="eyebrow" data-reveal>How booking works</span><h2 data-reveal>Three steps</h2></div>
+    <ol class="modules" style="grid-template-columns:1fr">
+      <li data-reveal><span class="num">01</span><div><b>Pick a slot above</b><span>Any green block, in your time zone. Two or three options help.</span></div></li>
+      <li data-reveal><span class="num">02</span><div><b>Email me the slot and the topic</b><span>One line is enough: role, project or question.</span></div></li>
+      <li data-reveal><span class="num">03</span><div><b>I confirm within a day</b><span>You get a calendar invite with a video link.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="glow"></div>
+  <div class="wrap">
+    <h2 data-reveal>Say hello</h2>
+    <p data-reveal>Paliwalsamarth39@gmail.com</p>
+    <div class="actions" data-reveal><button class="btn primary" type="button" data-reveal data-copy="#email" data-magnet>Copy email</button><a class="btn" href="index.html">Back home</a></div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Samarth Paliwal · Irvine, CA</span><span><a href="https://github.com/samarthpaliwal" target="_blank" rel="noopener">GitHub</a> · <a href="index.html">Home</a></span></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="site.js"></script>
+<script>
+/* Availability is defined in Arizona time (UTC-7 all year). Edit the slots here. */
+const AVAILABILITY = {
+  1: [['14:00', '17:00']],   // Monday
+  2: [['16:00', '18:00']],   // Tuesday
+  3: [['14:00', '17:00']],   // Wednesday
+  4: [['16:00', '18:00']],   // Thursday
+  5: [['13:00', '16:00']],   // Friday
+};
+const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+(() => {
+  const grid = document.getElementById('avail'), sel = document.getElementById('tz'), name = document.getElementById('tzName');
+  const localTz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+  const nextWeekday = d => { const now = new Date(); const diff = (d - now.getUTCDay() + 7) % 7 || 7; const r = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + diff)); return r; };
+  const render = () => {
+    const tz = sel.value === 'local' ? localTz : sel.value;
+    name.textContent = tz.replace(/_/g, ' ');
+    const fmt = new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit' });
+    const fmtDay = new Intl.DateTimeFormat('en-US', { timeZone: tz, weekday: 'short' });
+    grid.innerHTML = '';
+    for (let d = 1; d <= 5; d++) {
+      const col = document.createElement('div'); col.className = 'day';
+      const h = document.createElement('h4'); h.textContent = DAYS[d]; col.appendChild(h);
+      const slots = AVAILABILITY[d] || [];
+      if (!slots.length) { col.classList.add('off'); const s = document.createElement('div'); s.className = 'slot'; s.textContent = 'No slots'; col.appendChild(s); }
+      slots.forEach(([a, b]) => {
+        const base = nextWeekday(d);
+        const mk = t => { const [hh, mm] = t.split(':').map(Number); return new Date(Date.UTC(base.getUTCFullYear(), base.getUTCMonth(), base.getUTCDate(), hh + 7, mm)); };
+        const s = document.createElement('div'); s.className = 'slot';
+        const da = fmtDay.format(mk(a)), db = fmtDay.format(mk(b));
+        s.textContent = fmt.format(mk(a)) + ' – ' + fmt.format(mk(b));
+        const small = document.createElement('small');
+        small.textContent = (da === DAYS[d] && db === DAYS[d]) ? 'Arizona ' + a.replace(':00', '') + '–' + b.replace(':00', '') : 'Falls on ' + da + (da !== db ? '–' + db : '') + ' for you';
+        s.appendChild(small); col.appendChild(s);
+      });
+      grid.appendChild(col);
+    }
+  };
+  sel.addEventListener('change', render);
+  render();
+})();
+</script>
+</body>
+</html>

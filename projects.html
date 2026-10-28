@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Projects · Samarth Paliwal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<nav class="nav" id="nav"><div class="wrap">
+  <a class="brand" href="index.html">Samarth <span>Paliwal</span></a>
+  <ul>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html" aria-current="page">Projects</a></li>
+    <li><a href="connect.html">Connect</a></li>
+  </ul>
+  <a class="btn" href="connect.html">Book a time</a>
+</div></nav>
+
+<header class="page-head">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a><span>/</span><span>Projects</span></div>
+    <span class="eyebrow">Four case studies</span>
+    <h1><span class="l">Things</span><span class="l">I built</span></h1>
+    <p class="lead">Each one started as a question about how a system behaves under load, noise or adversarial input. Problem, approach and measured result for each. The rest of the code lives on GitHub, 28 public repositories and counting.</p>
+  </div>
+</header>
+
+<article class="case" id="market-making">
+  <div class="wrap grid">
+    <div class="art-box" data-reveal><div class="art art-lines"></div><span class="num">01</span><span class="label">asyncio · event loop · order book</span></div>
+    <div>
+      <span class="eyebrow" data-reveal>Concurrent systems</span>
+      <h2 data-reveal style="margin-top:8px">Adaptive market-making simulator</h2>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A financial simulation engine that quotes both sides of a market while volatility shifts underneath it, built to test whether an adaptive spread beats a fixed one.</p>
+      <div class="cols">
+        <div data-reveal><h4>Problem</h4><p>Market-making strategies look fine on calm data and blow up in stressed regimes. I wanted a harness that could replay volatility spikes and measure PnL variance honestly.</p></div>
+        <div data-reveal><h4>Approach</h4><p>Python asyncio for non-blocking I/O task management, so order flow, quoting and risk checks run as concurrent tasks. Order book lookups use a sorted structure for O(log n) access.</p></div>
+        <div data-reveal><h4>Result</h4><p>35.9% reduction in simulated PnL volatility across stress-tested market regimes, compared with the fixed-spread baseline.</p></div>
+      </div>
+      <div class="stack glint" data-reveal style="margin-top:24px"><span>Python</span><span>asyncio</span><span>Concurrency</span><span>Sorted containers</span></div>
+    </div>
+  </div>
+</article>
+
+<article class="case" id="event-platform">
+  <div class="wrap grid">
+    <div class="art-box" data-reveal><div class="art art-glow"></div><span class="num">02</span><span class="label">docker · aws · ci/cd</span></div>
+    <div>
+      <span class="eyebrow" data-reveal>Distributed data</span>
+      <h2 data-reveal style="margin-top:8px">Event-processing platform</h2>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A distributed pipeline that ingests, validates and routes high-volume event streams, deployed on AWS with a CI/CD path from commit to container.</p>
+      <div class="cols">
+        <div data-reveal><h4>Problem</h4><p>High-volume streams fail quietly: a malformed record slips through and corrupts everything downstream. Throughput and integrity usually fight each other.</p></div>
+        <div data-reveal><h4>Approach</h4><p>Asyncio workers in Docker containers on AWS, with custom schema validation layers at the ingest boundary. CI/CD builds and ships each change automatically.</p></div>
+        <div data-reveal><h4>Result</h4><p>Sustained 10,000 records per second with validation on, with data integrity held across concurrent streams.</p></div>
+      </div>
+      <div class="stack glint" data-reveal style="margin-top:24px"><span>Python</span><span>asyncio</span><span>Docker</span><span>AWS EC2 / S3</span><span>CI/CD</span></div>
+    </div>
+  </div>
+</article>
+
+<article class="case" id="rag">
+  <div class="wrap grid">
+    <div class="art-box" data-reveal><div class="art art-mesh"></div><span class="num">03</span><span class="label">langchain · vector db · evals</span></div>
+    <div>
+      <span class="eyebrow" data-reveal>Applied AI</span>
+      <h2 data-reveal style="margin-top:8px">RAG-based AI assistant</h2>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A retrieval-augmented generation assistant with an evaluation harness built in from the start, so every change to retrieval or prompting is measured, not eyeballed.</p>
+      <div class="cols">
+        <div data-reveal><h4>Problem</h4><p>RAG demos answer confidently and wrongly. Without a test set and failure taxonomy you cannot tell whether a change helped.</p></div>
+        <div data-reveal><h4>Approach</h4><p>LangChain pipeline over a vector database behind a REST API, with modular evaluation logic and structured failure-mode analysis across a fixed set of test queries.</p></div>
+        <div data-reveal><h4>Result</h4><p>Measurably fewer hallucinated and irrelevant responses across the test query sets after each retrieval and prompt iteration.</p></div>
+      </div>
+      <div class="stack glint" data-reveal style="margin-top:24px"><span>Python</span><span>LangChain</span><span>Vector DB</span><span>REST APIs</span><span>Evaluation</span></div>
+    </div>
+  </div>
+</article>
+
+<article class="case" id="fraud">
+  <div class="wrap grid">
+    <div class="art-box" data-reveal><div class="art art-scatter"></div><span class="num" style="color:rgba(21,18,14,.1)">04</span><span class="label" style="color:#5c564d">scikit-learn · anomaly detection</span></div>
+    <div>
+      <span class="eyebrow" data-reveal>Machine learning</span>
+      <h2 data-reveal style="margin-top:8px">Credit card fraud detection</h2>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">An anomaly-detection service that scores transactions in real time, tuned for the precision and recall trade-off that fraud teams actually live with.</p>
+      <div class="cols">
+        <div data-reveal><h4>Problem</h4><p>Fraud is rare, so accuracy is meaningless. A model that flags nothing scores 99%. The real target is catching fraud without burying analysts in false alarms.</p></div>
+        <div data-reveal><h4>Approach</h4><p>Feature engineering over transaction history, a scikit-learn anomaly-detection model, and precision/recall optimisation on held-out datasets, served through a REST API.</p></div>
+        <div data-reveal><h4>Result</h4><p>Deployed scoring of high-risk transaction patterns in real time, with thresholds chosen from the held-out precision/recall curve.</p></div>
+      </div>
+      <div class="stack glint" data-reveal style="margin-top:24px"><span>Python</span><span>scikit-learn</span><span>Pandas</span><span>REST API</span></div>
+    </div>
+  </div>
+</article>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head"><span class="eyebrow" data-reveal>More</span><h2 data-reveal>On GitHub</h2><p data-reveal>Everything else, from course work to the trading tools I tinker with, is public.</p></div>
+    <div class="cards">
+      <article class="cardx" data-reveal><span class="big" data-count="28"><span class="v">0</span></span><h4>Public repositories</h4><p>Full-stack applications and AI-powered features, with an emphasis on clean, working code.</p><a class="more" href="https://github.com/samarthpaliwal" target="_blank" rel="noopener">github.com/samarthpaliwal</a></article>
+      <article class="cardx" data-reveal><span class="tag">Hackathon builds</span><h4>Arizona Hacks winner</h4><p>A data-driven AI prototype designed and shipped in 24 hours by a two-person team.</p></article>
+      <article class="cardx" data-reveal><span class="tag">Live</span><h4>Roblox game</h4><p>Three years in operation. Persistent state, profiling and live ops on a real player base.</p><a class="more" href="experience.html#roblox">Read more</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="glow"></div>
+  <div class="wrap">
+    <h2 data-reveal>Next: connect</h2>
+    <p data-reveal>Meeting times, contact details and credentials on one page.</p>
+    <div class="actions" data-reveal><a class="btn primary" data-magnet href="connect.html">Book a time</a><a class="btn" href="experience.html">Back to experience</a></div>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>Samarth Paliwal · Irvine, CA</span><span><a href="https://github.com/samarthpaliwal" target="_blank" rel="noopener">GitHub</a> · <a href="connect.html">Connect</a></span></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
