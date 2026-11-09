@@ -153,6 +153,14 @@ ul{margin:0;padding:0;list-style:none}
 .art-scatter::after{left:66%;top:60%;width:10px;height:10px;animation-delay:1.2s}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 6px rgba(212,144,63,.25),0 0 18px rgba(212,144,63,.5)}50%{box-shadow:0 0 0 14px rgba(212,144,63,.12),0 0 34px rgba(212,144,63,.7)}}
 .art-box .art-scatter + .num{color:rgba(21,18,14,.1)}
+.art-notch{background:#0b0b0e radial-gradient(70% 55% at 50% 0%,rgba(212,144,63,.55) 0%,rgba(212,144,63,.18) 40%,transparent 70%)}
+.art-notch::before{content:"";position:absolute;left:50%;top:0;width:34%;height:9%;transform:translateX(-50%);border-radius:0 0 22px 22px;background:#000;box-shadow:0 0 40px 6px rgba(212,144,63,.35)}
+.art-notch::after{content:"";position:absolute;left:50%;top:5%;width:6px;height:6px;transform:translateX(-50%);border-radius:50%;background:var(--accent);animation:pulse 2.4s var(--ease) infinite}
+.art-stream{background:linear-gradient(180deg,#14141a,#0b0b0e 70%),repeating-linear-gradient(180deg,transparent 0 6px,rgba(241,237,230,.05) 6px 7px);background-blend-mode:screen}
+.art-stream::before{content:"";position:absolute;inset:14% 12% auto 12%;height:58%;border-radius:12px;border:1px solid rgba(241,237,230,.16);background:linear-gradient(135deg,rgba(212,144,63,.32),rgba(212,144,63,.04) 60%)}
+.art-stream::after{content:"";position:absolute;left:12%;right:12%;top:26%;height:2px;background:var(--accent);opacity:.8;animation:scan 2.6s linear infinite}
+@keyframes scan{from{transform:translateY(0)}to{transform:translateY(560%)}}
+.art-box .art-disc + .num{color:rgba(21,18,14,.1)}
 .art-mesh{background:linear-gradient(135deg,#1c1c22,#0b0b0e 60%),conic-gradient(from 200deg at 60% 110%,var(--accent-deep),#0b0b0e 40%,var(--accent) 70%,#0b0b0e);background-blend-mode:screen}
 @media (max-width:860px){.case .grid{grid-template-columns:1fr}.case:nth-of-type(even) .grid > .art-box{order:0}.case .cols{grid-template-columns:1fr}}
 
@@ -186,7 +194,7 @@ footer a:hover{color:var(--fg)}
 
 @media (prefers-reduced-motion:reduce){
   .page-head h1 .l{animation:none;transform:none}
-  .stack span::after,.glint:hover .stack span::after,.art-scatter::before,.art-scatter::after{animation:none}
+  .stack span::after,.glint:hover .stack span::after,.art-scatter::before,.art-scatter::after,.art-notch::after,.art-stream::after{animation:none}
   .stack span:hover,.cardx:hover{transform:none}
   .nav{transition:none}
   .timeline .draw{transform:none}

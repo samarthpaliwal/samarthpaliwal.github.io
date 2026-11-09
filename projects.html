@@ -24,15 +24,69 @@
   <div class="glow"></div>
   <div class="wrap">
     <div class="crumbs"><a href="index.html">Home</a><span>/</span><span>Projects</span></div>
-    <span class="eyebrow">Four case studies</span>
+    <span class="eyebrow">Seven case studies</span>
     <h1><span class="l">Things</span><span class="l">I built</span></h1>
-    <p class="lead">Each one started as a question about how a system behaves under load, noise or adversarial input. Problem, approach and measured result for each. The rest of the code lives on GitHub, 28 public repositories and counting.</p>
+    <p class="lead">Three native Mac apps I use every day, and four systems built to answer a question about load, noise or adversarial input. Problem, approach and measured result for each. The rest of the code lives on GitHub, 31 public repositories and counting.</p>
   </div>
 </header>
 
+<article class="case" id="Jarvis">
+  <div class="wrap grid">
+    <div class="art-box" data-reveal><div class="art art-notch"></div><span class="num">01</span><span class="label">swift · onnx · claude · permissions</span></div>
+    <div>
+      <span class="eyebrow" data-reveal>Agents on the desktop</span>
+      <h2 data-reveal style="margin-top:8px">Jarvis: a voice assistant in the MacBook notch</h2>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A menu bar assistant that wakes to “Hey Jarvis”, hears and speaks on-device, and hands the thinking to Claude behind 29 tools, each one gated by a permission tier enforced in code rather than in the prompt.</p>
+      <div class="cols">
+        <div data-reveal><h4>Problem</h4><p>An assistant that can run shell commands, read email and change system settings is only useful if you can trust what it will not do. Prompt-level guardrails are not a safety model.</p></div>
+        <div data-reveal><h4>Approach</h4><p>Swift and SwiftUI, with openWakeWord on ONNX Runtime and Apple’s SpeechAnalyzer so audio never leaves the Mac. Every tool call passes a dispatcher: denylist, mode allow-list, then Tier 2 approval in the notch with a 12 s timeout. Untrusted content is tagged as data.</p></div>
+        <div data-reveal><h4>Result</h4><p>Feature complete across six milestones: calendar, Gmail, Notion, morning briefings, automatic context modes, proactive nudges and an action log you can ask about. Falls back to a local Ollama model offline.</p></div>
+      </div>
+      <div class="stack glint" data-reveal style="margin-top:24px"><span>Swift</span><span>SwiftUI</span><span>ONNX Runtime</span><span>Claude API</span><span>EventKit</span><span>Keychain</span></div>
+      <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/Jarvis" target="_blank" rel="noopener">View the code on GitHub</a>
+    </div>
+  </div>
+</article>
+
+<article class="case" id="MacStream">
+  <div class="wrap grid">
+    <div class="art-box" data-reveal><div class="art art-stream"></div><span class="num">02</span><span class="label">hevc · udp · network.framework</span></div>
+    <div>
+      <span class="eyebrow" data-reveal>Real-time systems</span>
+      <h2 data-reveal style="margin-top:8px">MacStream: Mac to iPad, 20 ms end to end</h2>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">Low-latency screen streaming from a Mac to an iPad over local Wi-Fi, with touch, Apple Pencil and keyboard control flowing back. Native Swift on both ends, no third-party runtime.</p>
+      <div class="cols">
+        <div data-reveal><h4>Problem</h4><p>Remote-desktop tools treat the iPad as a dumb display: latency in the 100 ms range, gestures that do not map to macOS, and a pairing story that is either insecure or painful.</p></div>
+        <div data-reveal><h4>Approach</h4><p>ScreenCaptureKit into a hardware HEVC encoder, frames chunked over UDP with selective retransmission, keyframe requests and backpressure. An NTP-style clock sync measures true capture-to-display latency. Pairing uses a six-digit code to bootstrap a TLS pre-shared key, then a 256-bit long-term key in both Keychains.</p></div>
+        <div data-reveal><h4>Result</h4><p>20 ms capture-to-display at 2268×1472 on the Balanced preset, 12 ms on Performance. Under 3% simulated packet loss, retransmission recovered 122 of 137 lost packets and held bitrate at 12 to 15 Mb/s instead of collapsing to the floor.</p></div>
+      </div>
+      <div class="stack glint" data-reveal style="margin-top:24px"><span>Swift</span><span>SwiftUI</span><span>VideoToolbox</span><span>ScreenCaptureKit</span><span>Network.framework</span><span>UDP</span></div>
+      <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/MacStream" target="_blank" rel="noopener">View the code on GitHub</a>
+    </div>
+  </div>
+</article>
+
+<article class="case" id="SpotifyWidget">
+  <div class="wrap grid">
+    <div class="art-box" data-reveal><div class="art art-disc"></div><span class="num" style="color:rgba(21,18,14,.1)">03</span><span class="label" style="color:#5c564d">electron · typescript · applescript</span></div>
+    <div>
+      <span class="eyebrow" data-reveal>Desktop craft</span>
+      <h2 data-reveal style="margin-top:8px">Spotify Widget: a vinyl record on the desktop</h2>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A Now Playing widget for the Spotify desktop app: a circular album cover that spins at 33⅓, eases to a stop on pause, and sits on the macOS desktop-widget layer with a background pulled from each album’s artwork.</p>
+      <div class="cols">
+        <div data-reveal><h4>Problem</h4><p>Spotify’s own window is the wrong shape for a glance. Third-party widgets want OAuth, API keys and a login, and still miss the moment a track changes.</p></div>
+        <div data-reveal><h4>Approach</h4><p>Electron and TypeScript talking to Spotify over AppleScript only, so there is no login at all. A JXA helper subscribes to Spotify’s distributed notification for instant updates, backed by a sleep-aware poll. Palette extraction is a dependency-free saturation-weighted histogram. One Web Animations rotation, no per-frame JS.</p></div>
+        <div data-reveal><h4>Result</h4><p>Scratch the record to seek, synced lyrics from LRCLIB, snaps onto the system widget grid at exact macOS widget sizes, and a zero-runtime-dependency build. Two network requests total: album art and lyrics.</p></div>
+      </div>
+      <div class="stack glint" data-reveal style="margin-top:24px"><span>Electron</span><span>TypeScript</span><span>AppleScript / JXA</span><span>Web Animations API</span><span>esbuild</span></div>
+      <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/SpotifyWidget" target="_blank" rel="noopener">View the code on GitHub</a>
+    </div>
+  </div>
+</article>
+
 <article class="case" id="market-making">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-lines"></div><span class="num">01</span><span class="label">asyncio · event loop · order book</span></div>
+    <div class="art-box" data-reveal><div class="art art-lines"></div><span class="num">04</span><span class="label">asyncio · event loop · order book</span></div>
     <div>
       <span class="eyebrow" data-reveal>Concurrent systems</span>
       <h2 data-reveal style="margin-top:8px">Adaptive market-making simulator</h2>
@@ -49,7 +103,7 @@
 
 <article class="case" id="event-platform">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-glow"></div><span class="num">02</span><span class="label">docker · aws · ci/cd</span></div>
+    <div class="art-box" data-reveal><div class="art art-glow"></div><span class="num">05</span><span class="label">docker · aws · ci/cd</span></div>
     <div>
       <span class="eyebrow" data-reveal>Distributed data</span>
       <h2 data-reveal style="margin-top:8px">Event-processing platform</h2>
@@ -66,7 +120,7 @@
 
 <article class="case" id="rag">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-mesh"></div><span class="num">03</span><span class="label">langchain · vector db · evals</span></div>
+    <div class="art-box" data-reveal><div class="art art-mesh"></div><span class="num">06</span><span class="label">langchain · vector db · evals</span></div>
     <div>
       <span class="eyebrow" data-reveal>Applied AI</span>
       <h2 data-reveal style="margin-top:8px">RAG-based AI assistant</h2>
@@ -83,7 +137,7 @@
 
 <article class="case" id="fraud">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-scatter"></div><span class="num" style="color:rgba(21,18,14,.1)">04</span><span class="label" style="color:#5c564d">scikit-learn · anomaly detection</span></div>
+    <div class="art-box" data-reveal><div class="art art-scatter"></div><span class="num" style="color:rgba(21,18,14,.1)">07</span><span class="label" style="color:#5c564d">scikit-learn · anomaly detection</span></div>
     <div>
       <span class="eyebrow" data-reveal>Machine learning</span>
       <h2 data-reveal style="margin-top:8px">Credit card fraud detection</h2>
@@ -102,7 +156,7 @@
   <div class="wrap">
     <div class="section-head"><span class="eyebrow" data-reveal>More</span><h2 data-reveal>On GitHub</h2><p data-reveal>Everything else, from course work to the trading tools I tinker with, is public.</p></div>
     <div class="cards">
-      <article class="cardx" data-reveal><span class="big" data-count="28"><span class="v">0</span></span><h4>Public repositories</h4><p>Full-stack applications and AI-powered features, with an emphasis on clean, working code.</p><a class="more" href="https://github.com/samarthpaliwal" target="_blank" rel="noopener">github.com/samarthpaliwal</a></article>
+      <article class="cardx" data-reveal><span class="big" data-count="31"><span class="v">0</span></span><h4>Public repositories</h4><p>Full-stack applications and AI-powered features, with an emphasis on clean, working code.</p><a class="more" href="https://github.com/samarthpaliwal" target="_blank" rel="noopener">github.com/samarthpaliwal</a></article>
       <article class="cardx" data-reveal><span class="tag">Hackathon builds</span><h4>Arizona Hacks winner</h4><p>A data-driven AI prototype designed and shipped in 24 hours by a two-person team.</p></article>
       <article class="cardx" data-reveal><span class="tag">Live</span><h4>Roblox game</h4><p>Three years in operation. Persistent state, profiling and live ops on a real player base.</p><a class="more" href="experience.html#roblox">Read more</a></article>
     </div>
