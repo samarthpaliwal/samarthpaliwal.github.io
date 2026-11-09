@@ -24,9 +24,9 @@
   <div class="glow"></div>
   <div class="wrap">
     <div class="crumbs"><a href="index.html">Home</a><span>/</span><span>Projects</span></div>
-    <span class="eyebrow">Nine case studies</span>
+    <span class="eyebrow">Ten case studies</span>
     <h1><span class="l">Things</span><span class="l">I built</span></h1>
-    <p class="lead">Three native Mac apps I use every day, two tools for real-time and local-AI work, and four systems built to answer a question about load, noise or adversarial input. Problem, approach and measured result for each. The rest of the code lives on GitHub, 31 public repositories and counting.</p>
+    <p class="lead">Three native Mac apps I use every day, two tools for real-time and local-AI work, a multiplayer party game, and four systems built to answer a question about load, noise or adversarial input. Problem, approach and measured result for each. The rest of the code lives on GitHub, 32 public repositories and counting.</p>
   </div>
 </header>
 
@@ -120,9 +120,27 @@
   </div>
 </article>
 
+<article class="case" id="Coding_Game_Project">
+  <div class="wrap grid">
+    <div class="art-box" data-reveal><div class="art art-scatter"></div><span class="num" style="color:rgba(21,18,14,.1)">06</span><span class="label" style="color:#5c564d">node · websockets · no framework</span></div>
+    <div>
+      <span class="eyebrow" data-reveal>Multiplayer</span>
+      <h2 data-reveal style="margin-top:8px">Contraband: a party game on everyone’s phone</h2>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A room-code party game for 3 to 12 people. Everyone answers the same ridiculous prompt; a secret few are smugglers who must hide an assigned word in theirs. Vote for the funniest, then accuse the smugglers. Laughs and getaways both score.</p>
+      <div class="cols">
+        <div data-reveal><h4>Problem</h4><p>Phone-based party games fall apart on refresh, leak secrets to the wrong screen, and show the reveal on each phone a beat apart. Players notice all three.</p></div>
+        <div data-reveal><h4>Approach</h4><p>The server is the only authority: phones send intents, the server validates and sends each player a view containing only what they may know, and a unit test asserts the secrecy. Seat tokens make refresh and reconnect seamless. Timers live on the server; clients render countdowns from a measured clock offset so reveals land in the same beat on every screen.</p></div>
+        <div data-reveal><h4>Result</h4><p>No build step, no framework, one dependency. Unit tests cover rules, scoring and a full game over WebSockets; an end-to-end test drives three phones and a TV through a whole night in headless Chromium. One-click deploys to Render or Koyeb, optional Claude-generated prompt cards.</p></div>
+      </div>
+      <div class="stack glint" data-reveal style="margin-top:24px"><span>Node.js</span><span>WebSockets</span><span>Vanilla JS</span><span>Docker</span><span>Playwright</span></div>
+      <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/Coding_Game_Project" target="_blank" rel="noopener">View the code on GitHub</a>
+    </div>
+  </div>
+</article>
+
 <article class="case" id="market-making">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-lines"></div><span class="num">06</span><span class="label">asyncio · event loop · order book</span></div>
+    <div class="art-box" data-reveal><div class="art art-lines"></div><span class="num">07</span><span class="label">asyncio · event loop · order book</span></div>
     <div>
       <span class="eyebrow" data-reveal>Concurrent systems</span>
       <h2 data-reveal style="margin-top:8px">Adaptive market-making simulator</h2>
@@ -139,7 +157,7 @@
 
 <article class="case" id="event-platform">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-glow"></div><span class="num">07</span><span class="label">docker · aws · ci/cd</span></div>
+    <div class="art-box" data-reveal><div class="art art-glow"></div><span class="num">08</span><span class="label">docker · aws · ci/cd</span></div>
     <div>
       <span class="eyebrow" data-reveal>Distributed data</span>
       <h2 data-reveal style="margin-top:8px">Event-processing platform</h2>
@@ -156,7 +174,7 @@
 
 <article class="case" id="rag">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-mesh"></div><span class="num">08</span><span class="label">langchain · vector db · evals</span></div>
+    <div class="art-box" data-reveal><div class="art art-mesh"></div><span class="num">09</span><span class="label">langchain · vector db · evals</span></div>
     <div>
       <span class="eyebrow" data-reveal>Applied AI</span>
       <h2 data-reveal style="margin-top:8px">RAG-based AI assistant</h2>
@@ -173,7 +191,7 @@
 
 <article class="case" id="fraud">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-scatter"></div><span class="num" style="color:rgba(21,18,14,.1)">09</span><span class="label" style="color:#5c564d">scikit-learn · anomaly detection</span></div>
+    <div class="art-box" data-reveal><div class="art art-scatter"></div><span class="num" style="color:rgba(21,18,14,.1)">10</span><span class="label" style="color:#5c564d">scikit-learn · anomaly detection</span></div>
     <div>
       <span class="eyebrow" data-reveal>Machine learning</span>
       <h2 data-reveal style="margin-top:8px">Credit card fraud detection</h2>
@@ -192,7 +210,7 @@
   <div class="wrap">
     <div class="section-head"><span class="eyebrow" data-reveal>More</span><h2 data-reveal>On GitHub</h2><p data-reveal>Everything else, from course work to the trading tools I tinker with, is public.</p></div>
     <div class="cards">
-      <article class="cardx" data-reveal><span class="big" data-count="31"><span class="v">0</span></span><h4>Public repositories</h4><p>Full-stack applications and AI-powered features, with an emphasis on clean, working code.</p><a class="more" href="https://github.com/samarthpaliwal" target="_blank" rel="noopener">github.com/samarthpaliwal</a></article>
+      <article class="cardx" data-reveal><span class="big" data-count="32"><span class="v">0</span></span><h4>Public repositories</h4><p>Full-stack applications and AI-powered features, with an emphasis on clean, working code.</p><a class="more" href="https://github.com/samarthpaliwal" target="_blank" rel="noopener">github.com/samarthpaliwal</a></article>
       <article class="cardx" data-reveal><span class="tag">Hackathon builds</span><h4>Arizona Hacks winner</h4><p>A data-driven AI prototype designed and shipped in 24 hours by a two-person team.</p></article>
       <article class="cardx" data-reveal><span class="tag">Live</span><h4>Roblox game</h4><p>Three years in operation. Persistent state, profiling and live ops on a real player base.</p><a class="more" href="experience.html#roblox">Read more</a></article>
     </div>
