@@ -66,9 +66,27 @@
   </div>
 </article>
 
+<article class="case" id="Coding_Game_Project">
+  <div class="wrap grid">
+    <div class="art-box" data-reveal><div class="art art-scatter"></div><span class="num" style="color:rgba(21,18,14,.1)">03</span><span class="label" style="color:#5c564d">node · websockets · no framework</span></div>
+    <div>
+      <span class="eyebrow" data-reveal>Multiplayer</span>
+      <h2 data-reveal style="margin-top:8px">Contraband: a party game on everyone’s phone</h2>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A room-code party game for 3 to 12 people. Everyone answers the same ridiculous prompt; a secret few are smugglers who must hide an assigned word in theirs. Vote for the funniest, then accuse the smugglers. Laughs and getaways both score.</p>
+      <div class="cols">
+        <div data-reveal><h4>Problem</h4><p>Phone-based party games fall apart on refresh, leak secrets to the wrong screen, and show the reveal on each phone a beat apart. Players notice all three.</p></div>
+        <div data-reveal><h4>Approach</h4><p>The server is the only authority: phones send intents, the server validates and sends each player a view containing only what they may know, and a unit test asserts the secrecy. Seat tokens make refresh and reconnect seamless. Timers live on the server; clients render countdowns from a measured clock offset so reveals land in the same beat on every screen.</p></div>
+        <div data-reveal><h4>Result</h4><p>No build step, no framework, one dependency. Unit tests cover rules, scoring and a full game over WebSockets; an end-to-end test drives three phones and a TV through a whole night in headless Chromium. One-click deploys to Render or Koyeb, optional Claude-generated prompt cards.</p></div>
+      </div>
+      <div class="stack glint" data-reveal style="margin-top:24px"><span>Node.js</span><span>WebSockets</span><span>Vanilla JS</span><span>Docker</span><span>Playwright</span></div>
+      <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/Coding_Game_Project" target="_blank" rel="noopener">View the code on GitHub</a>
+    </div>
+  </div>
+</article>
+
 <article class="case" id="SpotifyWidget">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-disc"></div><span class="num" style="color:rgba(21,18,14,.1)">03</span><span class="label" style="color:#5c564d">electron · typescript · applescript</span></div>
+    <div class="art-box" data-reveal><div class="art art-disc"></div><span class="num" style="color:rgba(21,18,14,.1)">04</span><span class="label" style="color:#5c564d">electron · typescript · applescript</span></div>
     <div>
       <span class="eyebrow" data-reveal>Desktop craft</span>
       <h2 data-reveal style="margin-top:8px">Spotify Widget: a vinyl record on the desktop</h2>
@@ -86,7 +104,7 @@
 
 <article class="case" id="robotics-fleet-ui">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-glow"></div><span class="num">04</span><span class="label">react · websockets · typescript</span></div>
+    <div class="art-box" data-reveal><div class="art art-glow"></div><span class="num">05</span><span class="label">react · websockets · typescript</span></div>
     <div>
       <span class="eyebrow" data-reveal>Real-time UI</span>
       <h2 data-reveal style="margin-top:8px">FleetOS: a live dashboard for 50 robots</h2>
@@ -104,7 +122,7 @@
 
 <article class="case" id="Ignition">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-mesh"></div><span class="num">05</span><span class="label">pyside6 · llama.cpp · ollama</span></div>
+    <div class="art-box" data-reveal><div class="art art-mesh"></div><span class="num">06</span><span class="label">pyside6 · llama.cpp · ollama</span></div>
     <div>
       <span class="eyebrow" data-reveal>Local AI tooling</span>
       <h2 data-reveal style="margin-top:8px">Ignition: two local LLMs, side by side</h2>
@@ -116,24 +134,6 @@
       </div>
       <div class="stack glint" data-reveal style="margin-top:24px"><span>Python</span><span>PySide6</span><span>llama.cpp</span><span>Ollama</span><span>Qt Graphics</span></div>
       <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/Ignition" target="_blank" rel="noopener">View the code on GitHub</a>
-    </div>
-  </div>
-</article>
-
-<article class="case" id="Coding_Game_Project">
-  <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-scatter"></div><span class="num" style="color:rgba(21,18,14,.1)">06</span><span class="label" style="color:#5c564d">node · websockets · no framework</span></div>
-    <div>
-      <span class="eyebrow" data-reveal>Multiplayer</span>
-      <h2 data-reveal style="margin-top:8px">Contraband: a party game on everyone’s phone</h2>
-      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A room-code party game for 3 to 12 people. Everyone answers the same ridiculous prompt; a secret few are smugglers who must hide an assigned word in theirs. Vote for the funniest, then accuse the smugglers. Laughs and getaways both score.</p>
-      <div class="cols">
-        <div data-reveal><h4>Problem</h4><p>Phone-based party games fall apart on refresh, leak secrets to the wrong screen, and show the reveal on each phone a beat apart. Players notice all three.</p></div>
-        <div data-reveal><h4>Approach</h4><p>The server is the only authority: phones send intents, the server validates and sends each player a view containing only what they may know, and a unit test asserts the secrecy. Seat tokens make refresh and reconnect seamless. Timers live on the server; clients render countdowns from a measured clock offset so reveals land in the same beat on every screen.</p></div>
-        <div data-reveal><h4>Result</h4><p>No build step, no framework, one dependency. Unit tests cover rules, scoring and a full game over WebSockets; an end-to-end test drives three phones and a TV through a whole night in headless Chromium. One-click deploys to Render or Koyeb, optional Claude-generated prompt cards.</p></div>
-      </div>
-      <div class="stack glint" data-reveal style="margin-top:24px"><span>Node.js</span><span>WebSockets</span><span>Vanilla JS</span><span>Docker</span><span>Playwright</span></div>
-      <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/Coding_Game_Project" target="_blank" rel="noopener">View the code on GitHub</a>
     </div>
   </div>
 </article>
