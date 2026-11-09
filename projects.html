@@ -24,9 +24,9 @@
   <div class="glow"></div>
   <div class="wrap">
     <div class="crumbs"><a href="index.html">Home</a><span>/</span><span>Projects</span></div>
-    <span class="eyebrow">Seven case studies</span>
+    <span class="eyebrow">Nine case studies</span>
     <h1><span class="l">Things</span><span class="l">I built</span></h1>
-    <p class="lead">Three native Mac apps I use every day, and four systems built to answer a question about load, noise or adversarial input. Problem, approach and measured result for each. The rest of the code lives on GitHub, 31 public repositories and counting.</p>
+    <p class="lead">Three native Mac apps I use every day, two tools for real-time and local-AI work, and four systems built to answer a question about load, noise or adversarial input. Problem, approach and measured result for each. The rest of the code lives on GitHub, 31 public repositories and counting.</p>
   </div>
 </header>
 
@@ -84,9 +84,45 @@
   </div>
 </article>
 
+<article class="case" id="robotics-fleet-ui">
+  <div class="wrap grid">
+    <div class="art-box" data-reveal><div class="art art-glow"></div><span class="num">04</span><span class="label">react · websockets · typescript</span></div>
+    <div>
+      <span class="eyebrow" data-reveal>Real-time UI</span>
+      <h2 data-reveal style="margin-top:8px">FleetOS: a live dashboard for 50 robots</h2>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A fleet command interface for autonomous robots: a Node WebSocket server simulates 50 robots streaming telemetry five times a second each, and a React and TypeScript front end renders the fleet, a live detail panel and commands with acknowledgements.</p>
+      <div class="cols">
+        <div data-reveal><h4>Problem</h4><p>A dashboard fed by 250 telemetry messages a second will either re-render itself to death or fall behind. It also has to survive the server going away without the operator noticing.</p></div>
+        <div data-reveal><h4>Approach</h4><p>A framework-free WebSocket service owns the socket: JSON validation, a 15 s heartbeat and reconnection with exponential backoff and jitter. Robot updates are batched and throttled into a reducer-backed store before React sees them. Commands apply optimistically and reconcile on the server's ack.</p></div>
+        <div data-reveal><h4>Result</h4><p>Smooth at 50 robots and 5 Hz per robot, error-state robots sorted first, a rolling battery chart per robot, and a kill-and-restart of the server that reconnects on its own.</p></div>
+      </div>
+      <div class="stack glint" data-reveal style="margin-top:24px"><span>React 18</span><span>TypeScript</span><span>Vite</span><span>WebSockets</span><span>Node.js</span></div>
+      <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/robotics-fleet-ui" target="_blank" rel="noopener">View the code on GitHub</a>
+    </div>
+  </div>
+</article>
+
+<article class="case" id="Ignition">
+  <div class="wrap grid">
+    <div class="art-box" data-reveal><div class="art art-mesh"></div><span class="num">05</span><span class="label">pyside6 · llama.cpp · ollama</span></div>
+    <div>
+      <span class="eyebrow" data-reveal>Local AI tooling</span>
+      <h2 data-reveal style="margin-top:8px">Ignition: two local LLMs, side by side</h2>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A desktop tool for comparing how two local language models work through the same question. Each model produces a plan, a note per step and a streamed answer, drawn as a graph you can edit and re-run from the middle.</p>
+      <div class="cols">
+        <div data-reveal><h4>Problem</h4><p>Reading two models’ answers tells you who got it right, not where their reasoning diverged. And editing a prompt and re-running from scratch loses the thread you were pulling on.</p></div>
+        <div data-reveal><h4>Approach</h4><p>Single-file PySide6 app. Each panel loads a GGUF through llama-cpp-python, talks to Ollama, or runs a mock backend. Plan steps become nodes in a zoomable graph; editing one re-runs only what follows it and diffs the answer. A token-overlap heatmap shows which steps the final answer leans on.</p></div>
+        <div data-reveal><h4>Result</h4><p>Side-by-side traces for gpt-oss-20b and gpt-oss-120b class models, session save and load, PNG export, a guardrail slider, and an A/B bench that writes results to JSON.</p></div>
+      </div>
+      <div class="stack glint" data-reveal style="margin-top:24px"><span>Python</span><span>PySide6</span><span>llama.cpp</span><span>Ollama</span><span>Qt Graphics</span></div>
+      <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/Ignition" target="_blank" rel="noopener">View the code on GitHub</a>
+    </div>
+  </div>
+</article>
+
 <article class="case" id="market-making">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-lines"></div><span class="num">04</span><span class="label">asyncio · event loop · order book</span></div>
+    <div class="art-box" data-reveal><div class="art art-lines"></div><span class="num">06</span><span class="label">asyncio · event loop · order book</span></div>
     <div>
       <span class="eyebrow" data-reveal>Concurrent systems</span>
       <h2 data-reveal style="margin-top:8px">Adaptive market-making simulator</h2>
@@ -103,7 +139,7 @@
 
 <article class="case" id="event-platform">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-glow"></div><span class="num">05</span><span class="label">docker · aws · ci/cd</span></div>
+    <div class="art-box" data-reveal><div class="art art-glow"></div><span class="num">07</span><span class="label">docker · aws · ci/cd</span></div>
     <div>
       <span class="eyebrow" data-reveal>Distributed data</span>
       <h2 data-reveal style="margin-top:8px">Event-processing platform</h2>
@@ -120,7 +156,7 @@
 
 <article class="case" id="rag">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-mesh"></div><span class="num">06</span><span class="label">langchain · vector db · evals</span></div>
+    <div class="art-box" data-reveal><div class="art art-mesh"></div><span class="num">08</span><span class="label">langchain · vector db · evals</span></div>
     <div>
       <span class="eyebrow" data-reveal>Applied AI</span>
       <h2 data-reveal style="margin-top:8px">RAG-based AI assistant</h2>
@@ -137,7 +173,7 @@
 
 <article class="case" id="fraud">
   <div class="wrap grid">
-    <div class="art-box" data-reveal><div class="art art-scatter"></div><span class="num" style="color:rgba(21,18,14,.1)">07</span><span class="label" style="color:#5c564d">scikit-learn · anomaly detection</span></div>
+    <div class="art-box" data-reveal><div class="art art-scatter"></div><span class="num" style="color:rgba(21,18,14,.1)">09</span><span class="label" style="color:#5c564d">scikit-learn · anomaly detection</span></div>
     <div>
       <span class="eyebrow" data-reveal>Machine learning</span>
       <h2 data-reveal style="margin-top:8px">Credit card fraud detection</h2>
