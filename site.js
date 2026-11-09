@@ -35,6 +35,7 @@
   const nav = document.getElementById('nav');
   let lastY = 0;
   const onScroll = y => {
+    if (!nav) return;
     nav.classList.toggle('is-solid', y > 40);
     if (y > 400 && y > lastY + 4) nav.classList.add('is-hidden');
     else if (y < lastY - 4 || y < 400) nav.classList.remove('is-hidden');
@@ -43,6 +44,16 @@
   if (lenis) lenis.on('scroll', e => onScroll(e.scroll));
   else addEventListener('scroll', () => onScroll(scrollY), { passive: true });
   onScroll(scrollY);
+
+
+  /* Mobile menu */
+  (() => {
+    const nav = document.getElementById('nav'), btn = nav && nav.querySelector('.menu'); if (!btn) return;
+    const set = open => { nav.classList.toggle('is-open', open); btn.setAttribute('aria-expanded', String(open)); };
+    btn.addEventListener('click', () => set(!nav.classList.contains('is-open')));
+    nav.querySelectorAll('ul a').forEach(a => a.addEventListener('click', () => set(false)));
+    addEventListener('resize', () => { if (innerWidth > 760) set(false); });
+  })();
 
   /* Chips: stagger index + cursor-tracking glow */
   document.querySelectorAll('.stack').forEach(stack => {
@@ -70,7 +81,7 @@
   if (!hasGsap) return;
 
   /* Page header parallax */
-  if (!reduce) gsap.to('.page-head .wrap', {
+  if (!reduce && document.querySelector('.page-head .wrap')) gsap.to('.page-head .wrap', {
     y: 80, opacity: 0, ease: 'none',
     scrollTrigger: { trigger: '.page-head', start: 'top top', end: 'bottom top', scrub: true }
   });

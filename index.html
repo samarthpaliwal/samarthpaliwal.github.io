@@ -54,7 +54,21 @@ img{max-width:100%}
 .btn:hover{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:#120c05}
 .btn.primary:hover{background:#e8a553;border-color:#e8a553}
-@media (max-width:760px){.nav ul{display:none}}
+.nav .menu{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--fg);cursor:pointer;padding:0}
+.nav .menu span,.nav .menu span::before,.nav .menu span::after{display:block;width:18px;height:2px;background:currentColor;position:relative;transition:transform .3s,opacity .3s}
+.nav .menu span::before,.nav .menu span::after{content:"";position:absolute;left:0}
+.nav .menu span::before{top:-6px}.nav .menu span::after{top:6px}
+.nav.is-open .menu span{background:transparent}
+.nav.is-open .menu span::before{transform:translateY(6px) rotate(45deg)}
+.nav.is-open .menu span::after{transform:translateY(-6px) rotate(-45deg)}
+@media (max-width:760px){
+  .nav .menu{display:inline-flex}
+  .nav ul{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:0;background:rgba(11,11,14,.96);border-bottom:1px solid var(--line);padding:8px 0 12px}
+  .nav.is-open ul{display:flex}
+  .nav li a{display:block;padding:14px var(--gutter-l,24px);font-size:15px}
+  .nav .wrap > .btn{display:none}
+}
+
 
 /* Hero carousel */
 .hero{position:relative;height:100svh;min-height:600px;max-height:1000px;overflow:hidden;background:#000}
@@ -156,13 +170,6 @@ img{max-width:100%}
 .art-mesh{background:linear-gradient(135deg,#1c1c22,#0b0b0e 60%),conic-gradient(from 200deg at 60% 110%,var(--accent-deep),#0b0b0e 40%,var(--accent) 70%,#0b0b0e);background-blend-mode:screen}
 @media (max-width:860px){.grid{grid-template-columns:1fr}.tile,.tile.wide{min-height:460px}}
 
-/* Horizontal credentials */
-.range{background:var(--bg-2);overflow:hidden}
-.range .head{padding-block:clamp(60px,8vw,110px) 30px;display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
-.range h2{font-size:clamp(46px,7vw,112px)}
-.range .head p{color:var(--muted);max-width:36ch}
-.range .viewport{height:100svh;min-height:560px;display:flex;align-items:center}
-.range .track{display:flex;gap:20px;padding-left:var(--gutter-l);padding-right:var(--gutter-r);will-change:transform}
 .card{flex:0 0 min(78vw,540px);height:min(72svh,620px);border-radius:20px;background:var(--bg-3);position:relative;overflow:hidden;padding:30px;display:flex;flex-direction:column;border:1px solid var(--line)}
 .card > div{margin-top:auto;display:flex;flex-direction:column;gap:18px}
 .card .n{font-family:var(--display);font-size:clamp(70px,9vw,150px);line-height:.85;font-weight:700;color:rgba(241,237,230,.08);position:absolute;right:18px;top:10px;font-variant-numeric:tabular-nums}
@@ -213,7 +220,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <nav class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top">Samarth <span>Paliwal</span></a>
-    <ul>
+  <button class="menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+  <ul id="navLinks">
       <li><a href="education.html">Education</a></li>
       <li><a href="experience.html">Experience</a></li>
       <li><a href="projects.html">Projects</a></li>
@@ -248,7 +256,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <span class="eyebrow">Hackathons</span>
       <h1><span class="l">Three times</span><span class="l">first place</span></h1>
       <p class="sub">Arizona Hacks against 500+ teams, and back-to-back wins at Innovation Hacks. Then I organised one for 500 people.</p>
-      <div class="cta"><a class="btn primary" href="#credentials">See the awards</a></div>
+      <div class="cta"><a class="btn primary" href="connect.html#credentials">See the awards</a></div>
     </div></div>
   </div>
   <div class="dots" id="dots" role="tablist" aria-label="Hero slides"></div>
@@ -457,6 +465,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   if (lenis) lenis.on('scroll', e => onScroll(e.scroll));
   else addEventListener('scroll', () => onScroll(scrollY), { passive: true });
 
+
+  /* Mobile menu */
+  (() => {
+    const nav = document.getElementById('nav'), btn = nav && nav.querySelector('.menu'); if (!btn) return;
+    const set = open => { nav.classList.toggle('is-open', open); btn.setAttribute('aria-expanded', String(open)); };
+    btn.addEventListener('click', () => set(!nav.classList.contains('is-open')));
+    nav.querySelectorAll('ul a').forEach(a => a.addEventListener('click', () => set(false)));
+    addEventListener('resize', () => { if (innerWidth > 760) set(false); });
+  })();
+
   /* ---------- Stack chips: stagger index + cursor-tracking glow ---------- */
   document.querySelectorAll('.tile .stack').forEach(stack => {
     [...stack.children].forEach((chip, i) => {
@@ -564,19 +582,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   requestAnimationFrame(draw);
 
   if (!hasGsap) return;
+  const safe = fn => { try { fn(); } catch (err) { console.warn('[site] effect skipped:', err && err.message); } };
 
   /* ---------- Hero parallax + fade out on scroll ---------- */
-  if (!reduce) gsap.to('.hero .copy, .hero .dots', {
+  if (!reduce) safe(() => gsap.to('.hero .copy, .hero .dots', {
     y: 120, opacity: 0, ease: 'none',
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
-  });
+  }));
 
   /* ---------- Word-by-word headline ---------- */
-  const head = document.getElementById('introHead');
-  head.innerHTML = head.innerHTML.replace(/(<em>)?([^<\s]+)(<\/em>)?/g, (m, a, w, b) => `<span class="word">${a || ''}${w}${b || ''}</span>`);
-  if (!reduce) gsap.from('#introHead .word', {
-    yPercent: 60, opacity: 0, stagger: 0.07, duration: 1, ease: 'power3.out',
-    scrollTrigger: { trigger: '.intro', start: 'top 70%' }
+  safe(() => {
+    const head = document.getElementById('introHead'); if (!head) return;
+    head.innerHTML = head.innerHTML.replace(/(<em>)?([^<\s]+)(<\/em>)?/g, (m, a, w, b) => `<span class="word">${a || ''}${w}${b || ''}</span>`);
+    if (!reduce) gsap.from('#introHead .word', {
+      yPercent: 60, opacity: 0, stagger: 0.07, duration: 1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.intro', start: 'top 70%' }
+    });
   });
 
   /* ---------- Generic reveals ---------- */
@@ -592,7 +613,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   }
 
   /* ---------- Pinned experience with scrubbed ring ---------- */
+  safe(() => {
   const chapters = [...document.querySelectorAll('[data-chapter]')];
+  if (!chapters.length || !document.getElementById('ringVal')) return;
   const n = chapters.length;
   const ringVal = document.getElementById('ringVal'), ringNum = document.getElementById('ringNum'), ringUnit = document.getElementById('ringUnit');
   const bars = [...document.querySelectorAll('#chapProgress b')];
@@ -615,17 +638,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       ringVal.setAttribute('stroke-dashoffset', C - C * p);
     }
   });
-
-  /* ---------- Horizontal credentials ---------- */
-  const track = document.getElementById('track');
-  if (!reduce) gsap.to(track, {
-    x: () => -(track.scrollWidth - innerWidth), ease: 'none',
-    scrollTrigger: { trigger: '.range .viewport', start: 'top top', end: () => '+=' + (track.scrollWidth - innerWidth), pin: true, scrub: 0.6, invalidateOnRefresh: true }
   });
 
   /* ---------- Counters ---------- */
   document.querySelectorAll('[data-count]').forEach(el => {
-    const v = el.querySelector('.v'), end = +el.dataset.count;
+    const v = el.querySelector('.v'), end = +el.dataset.count; if (!v) return;
     if (reduce) { v.textContent = end.toLocaleString('en-US'); return; }
     const o = { n: 0 };
     gsap.to(o, { n: end, duration: 1.8, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 85%' },

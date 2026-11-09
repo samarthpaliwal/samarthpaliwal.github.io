@@ -6,12 +6,13 @@
 <title>Connect · Samarth Paliwal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="site.css?v=3">
 </head>
 <body>
 <nav class="nav" id="nav"><div class="wrap">
   <a class="brand" href="index.html">Samarth <span>Paliwal</span></a>
-  <ul>
+  <button class="menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+  <ul id="navLinks">
     <li><a href="education.html">Education</a></li>
     <li><a href="experience.html">Experience</a></li>
     <li><a href="projects.html">Projects</a></li>
@@ -64,7 +65,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="credentials">
   <div class="wrap">
     <div class="section-head"><span class="eyebrow" data-reveal>Credentials</span><h2 data-reveal>On record</h2><p data-reveal>The facts a recruiter or collaborator usually asks for first.</p></div>
     <div class="cards">
@@ -103,7 +104,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
-<script src="site.js"></script>
+<script src="site.js?v=3"></script>
 <script>
 /* Availability is defined in Arizona time (UTC-7 all year). Edit the slots here. */
 const AVAILABILITY = {
