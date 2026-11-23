@@ -27,7 +27,7 @@
     <div class="crumbs"><a href="index.html">Home</a><span>/</span><span>Projects</span></div>
     <span class="eyebrow">Ten case studies</span>
     <h1><span class="l">Things</span><span class="l">I built</span></h1>
-    <p class="lead">Three native Mac apps I use every day, two tools for real-time and local-AI work, a multiplayer party game, and four systems built to answer a question about load, noise or adversarial input. Problem, approach and measured result for each. The rest of the code lives on GitHub, 32 public repositories and counting.</p>
+    <p class="lead">Three native Mac apps I use every day, two tools for real-time and local-AI work, a multiplayer party game, and four systems built to answer a question about load, noise or adversarial input. Problem, approach and measured result for each. The rest of the code lives on GitHub, 37 public repositories and counting.</p>
   </div>
 </header>
 
@@ -37,11 +37,11 @@
     <div>
       <span class="eyebrow" data-reveal>Agents on the desktop</span>
       <h2 data-reveal style="margin-top:8px">Jarvis: a voice assistant in the MacBook notch</h2>
-      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A menu bar assistant that wakes to “Hey Jarvis”, hears and speaks on-device, and hands the thinking to Claude behind 29 tools, each one gated by a permission tier enforced in code rather than in the prompt.</p>
+      <p class="muted" data-reveal style="margin-top:16px;font-size:17px">A menu bar assistant that wakes to “Hey Jarvis”, hears and speaks on-device, and hands the thinking to Claude behind 43 tools, each one gated by a permission tier enforced in code rather than in the prompt.</p>
       <div class="cols">
         <div data-reveal><h4>Problem</h4><p>An assistant that can run shell commands, read email and change system settings is only useful if you can trust what it will not do. Prompt-level guardrails are not a safety model.</p></div>
         <div data-reveal><h4>Approach</h4><p>Swift and SwiftUI, with openWakeWord on ONNX Runtime and Apple’s SpeechAnalyzer so audio never leaves the Mac. Every tool call passes a dispatcher: denylist, mode allow-list, then Tier 2 approval in the notch with a 12 s timeout. Untrusted content is tagged as data.</p></div>
-        <div data-reveal><h4>Result</h4><p>Feature complete across six milestones: calendar, Gmail, Notion, morning briefings, automatic context modes, proactive nudges and an action log you can ask about. Falls back to a local Ollama model offline.</p></div>
+        <div data-reveal><h4>Result</h4><p>Calendar, Gmail, Notion, briefings, the camera and an action log you can ask about. On-device speaker verification gates approvals, saved keys unlock with Touch ID, and a phone app with a hands-free call mode reaches it over a private Tailscale network. 362 tests, grouped by pipeline stage.</p></div>
       </div>
       <div class="stack glint" data-reveal style="margin-top:24px"><span>Swift</span><span>SwiftUI</span><span>ONNX Runtime</span><span>Claude API</span><span>EventKit</span><span>Keychain</span></div>
       <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/Jarvis" target="_blank" rel="noopener">View the code on GitHub</a>
@@ -152,6 +152,7 @@
         <div data-reveal><h4>Result</h4><p>35.9% reduction in simulated PnL volatility across stress-tested market regimes, compared with the fixed-spread baseline.</p></div>
       </div>
       <div class="stack glint" data-reveal style="margin-top:24px"><span>Python</span><span>asyncio</span><span>Concurrency</span><span>Sorted containers</span></div>
+      <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/adaptive-market-making-simulator" target="_blank" rel="noopener">View the code on GitHub</a>
     </div>
   </div>
 </article>
@@ -169,6 +170,7 @@
         <div data-reveal><h4>Result</h4><p>Sustained 10,000 records per second with validation on, with data integrity held across concurrent streams.</p></div>
       </div>
       <div class="stack glint" data-reveal style="margin-top:24px"><span>Python</span><span>asyncio</span><span>Docker</span><span>AWS EC2 / S3</span><span>CI/CD</span></div>
+      <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/event-processing-platform" target="_blank" rel="noopener">View the code on GitHub</a>
     </div>
   </div>
 </article>
@@ -203,6 +205,7 @@
         <div data-reveal><h4>Result</h4><p>Deployed scoring of high-risk transaction patterns in real time, with thresholds chosen from the held-out precision/recall curve.</p></div>
       </div>
       <div class="stack glint" data-reveal style="margin-top:24px"><span>Python</span><span>scikit-learn</span><span>Pandas</span><span>REST API</span></div>
+      <a class="more" data-reveal style="margin-top:20px" href="https://github.com/samarthpaliwal/CreditCardFraud" target="_blank" rel="noopener">View the code on GitHub</a>
     </div>
   </div>
 </article>
@@ -211,7 +214,7 @@
   <div class="wrap">
     <div class="section-head"><span class="eyebrow" data-reveal>More</span><h2 data-reveal>On GitHub</h2><p data-reveal>Everything else, from course work to the trading tools I tinker with, is public.</p></div>
     <div class="cards">
-      <article class="cardx" data-reveal><span class="big" data-count="32"><span class="v">0</span></span><h4>Public repositories</h4><p>Full-stack applications and AI-powered features, with an emphasis on clean, working code.</p><a class="more" href="https://github.com/samarthpaliwal" target="_blank" rel="noopener">github.com/samarthpaliwal</a></article>
+      <article class="cardx" data-reveal><span class="big" data-count="37"><span class="v">0</span></span><h4>Public repositories</h4><p>Full-stack applications and AI-powered features, with an emphasis on clean, working code.</p><a class="more" href="https://github.com/samarthpaliwal" target="_blank" rel="noopener">github.com/samarthpaliwal</a></article>
       <article class="cardx" data-reveal><span class="tag">Hackathon builds</span><h4>Arizona Hacks winner</h4><p>A data-driven AI prototype designed and shipped in 24 hours by a two-person team.</p></article>
       <article class="cardx" data-reveal><span class="tag">Live</span><h4>Roblox game</h4><p>Three years in operation. Persistent state, profiling and live ops on a real player base.</p><a class="more" href="experience.html#roblox">Read more</a></article>
     </div>
